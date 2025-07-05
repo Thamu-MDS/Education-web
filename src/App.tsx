@@ -1,39 +1,47 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Page/Home';
-import Courses from './Page/CoursePage';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import Header from './components/Header';
 import Footer from './components/Footer';
-import Navigation from './components/Navigation';
-
-// Page Components
-import MBAPage from './Page/Courses/MBA';
-import MCAPage from './Page/Courses/MCA';
+import Home from './Page/Home';
+import MCAPage from './Page/Courses/MCAPage';
+import MBAPage from './Page/Courses/MBAPage';
+import BCAPage from './Page/Courses/BCAPage';
+import MScITPage from './Page/Courses/MScITPage';
+import MScCyberPage from './Page/Courses/MScCyberPage';
+import BComPage from './Page/Courses/BComPage';
+import About from './Page/About';
 import Contact from './Page/Contact';
-import About from './Page/About';     // ✅ Optional, if you want to include
-import Mscit from './Page/Courses/MscIt';
-import Bcom from './Page/Courses/Bcom';
-// import BCAPage from './Page/Courses/BCA';
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/mca" element={<MCAPage />} />
+        <Route path="/mba" element={<MBAPage />} />
+        <Route path="/bca" element={<BCAPage />} />
+        <Route path="/msc-it" element={<MScITPage />} />
+        <Route path="/msc-cyber" element={<MScCyberPage />} />
+        <Route path="/bcom" element={<BComPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navigation />
-      <div className="pt-20"> {/* Offset for fixed navbar */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} /> 
-          <Route path="/contact" element={<Contact/>} />
-          <Route path="/courses" element={<Courses />} />
-
-          {/* Individual Course Pages */}
-          <Route path="/courses/mba" element={<MBAPage />} />
-          <Route path="/courses/mca" element={<MCAPage />} />
-          <Route path="/courses/bcom" element={<Bcom/>} /> 
-           <Route path="/courses/msc-it" element={<Mscit/>} />
-          {/* <Route path="/courses/bca" element={<BCAPage />} /> */}
-        </Routes>
+    <Router>
+      <div className="min-h-screen bg-slate-900 text-white">
+        <Header />
+        <AnimatedRoutes />
         <Footer />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
