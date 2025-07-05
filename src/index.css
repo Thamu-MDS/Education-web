@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -20,13 +22,13 @@ body {
   color: #333;
 }
 
-/* Custom scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #0B1C39;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -38,12 +40,11 @@ body {
   background: #e6c200;
 }
 
-/* Smooth transitions for all interactive elements */
+/* Transitions and Focus Styles */
 button, a, input, textarea, select {
   transition: all 0.2s ease-in-out;
 }
 
-/* Focus styles for accessibility */
 button:focus,
 a:focus,
 input:focus,
@@ -53,7 +54,7 @@ select:focus {
   outline-offset: 2px;
 }
 
-/* Animation utilities */
+/* Animations */
 .animate-fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -63,26 +64,33 @@ select:focus {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-/* Custom gradient backgrounds */
+/* 3D Effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Gradients */
 .gradient-primary {
   background: linear-gradient(135deg, #0A1128 0%, #075985 100%);
 }
@@ -91,7 +99,7 @@ select:focus {
   background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
 }
 
-/* Card hover effects */
+/* Cards */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -101,21 +109,21 @@ select:focus {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Button styles */
+/* Buttons */
 .btn-primary {
-  @apply bg-gold-500 text-primary-950 px-6 py-3 rounded-lg font-semibold hover:bg-gold-400 transition-all duration-200;
+  @apply bg-yellow-400 text-[#0B1C39] px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-200;
 }
 
 .btn-secondary {
-  @apply border-2 border-gold-500 text-gold-500 px-6 py-3 rounded-lg font-semibold hover:bg-gold-500 hover:text-primary-950 transition-all duration-200;
+  @apply border-2 border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-[#0B1C39] transition-all duration-200;
 }
 
-/* Form styles */
+/* Form Elements */
 .form-input {
-  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors duration-200;
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-colors duration-200;
 }
 
-/* Loading animation */
+/* Loading Spinner */
 .loading-spinner {
   border: 3px solid #f3f3f3;
   border-top: 3px solid #FFD700;
@@ -130,7 +138,7 @@ select:focus {
   100% { transform: rotate(360deg); }
 }
 
-/* Responsive typography */
+/* Responsive Typography */
 @media (max-width: 640px) {
   h1 {
     font-size: 2rem;
@@ -143,7 +151,7 @@ select:focus {
   }
 }
 
-/* Print styles */
+/* Print Styles */
 @media print {
   .no-print {
     display: none !important;

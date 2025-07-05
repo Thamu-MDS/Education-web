@@ -10,8 +10,9 @@ import BCAPage from './Page/Courses/BCAPage';
 import MScITPage from './Page/Courses/MScITPage';
 import MScCyberPage from './Page/Courses/MScCyberPage';
 import BComPage from './Page/Courses/BComPage';
-import About from './Page/About';
-import Contact from './Page/Contact';
+import AboutPage from './Page/AboutPage';
+import ContactPage from './Page/ContactPage';
+import Pricedata from './Page/Pricedata';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -26,8 +27,9 @@ function AnimatedRoutes() {
         <Route path="/msc-it" element={<MScITPage />} />
         <Route path="/msc-cyber" element={<MScCyberPage />} />
         <Route path="/bcom" element={<BComPage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<AboutPage />} />
+      <Route path="//price" element={<Pricedata />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
   );
@@ -46,3 +48,20 @@ function App() {
 }
 
 export default App;
+
+// import React from "react";
+// import Pricedata from "./Page/Pricedata";
+
+
+
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//     <Pricedata/>
+//     </div>
+//   );
+// }
+
+// export default App;

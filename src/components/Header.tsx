@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -41,78 +41,51 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="relative"
-            >
+            <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="relative">
               <img
                 src="\src\assets\images\logo.jpg"
                 alt="Madras Distance Education Logo"
                 className="h-12 w-auto object-contain"
               />
             </motion.div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
-                Madras <span className="text-yellow-400">Distance Education</span>
-              </h1>
-              <p className="text-xs text-slate-400">Excellence in Education</p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link 
-              to="/" 
-              className={`relative px-4 py-2 font-medium transition-all duration-300 ${
-                isActive('/') 
-                  ? 'text-yellow-400' 
-                  : 'text-white hover:text-yellow-400'
-              }`}
-            >
-              Home
-              {isActive('/') && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
-                />
-              )}
-            </Link>
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'About', path: '/about' }
+            ].map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`relative px-4 py-2 font-medium transition-all duration-300 ${
+                  isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
+                }`}
+              >
+                {link.name}
+                {isActive(link.path) && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
+                  />
+                )}
+              </Link>
+            ))}
 
-            <Link 
-              to="/about" 
-              className={`relative px-4 py-2 font-medium transition-all duration-300 ${
-                isActive('/about') 
-                  ? 'text-yellow-400' 
-                  : 'text-white hover:text-yellow-400'
-              }`}
-            >
-              About
-              {isActive('/about') && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
-                />
-              )}
-            </Link>
-
+            {/* Courses Dropdown */}
             <div 
               className="relative"
               onMouseEnter={() => setIsCoursesOpen(true)}
               onMouseLeave={() => setIsCoursesOpen(false)}
             >
-              <button
-                className="flex items-center px-4 py-2 font-medium text-white hover:text-yellow-400 transition-all duration-300"
-              >
+              <button className="flex items-center px-4 py-2 font-medium text-white hover:text-yellow-400 transition-all duration-300">
                 Courses 
-                <motion.div
-                  animate={{ rotate: isCoursesOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <motion.div animate={{ rotate: isCoursesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </motion.div>
               </button>
-              
+
               <AnimatePresence>
                 {isCoursesOpen && (
                   <motion.div
@@ -159,27 +132,32 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
-            <Link 
-              to="/contact" 
-              className={`relative px-4 py-2 font-medium transition-all duration-300 ${
-                isActive('/contact') 
-                  ? 'text-yellow-400' 
-                  : 'text-white hover:text-yellow-400'
-              }`}
-            >
-              Contact
-              {isActive('/contact') && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
-                />
-              )}
-            </Link>
+            {/* New Pages */}
+            {[
+              { name: 'Skills', path: '/skills' },
+              { name: 'Languages', path: '/languages' },
+              { name: 'Price', path: '/price' },
+              { name: 'Contact', path: '/contact' }
+            ].map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`relative px-4 py-2 font-medium transition-all duration-300 ${
+                  isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
+                }`}
+              >
+                {link.name}
+                {isActive(link.path) && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
+                  />
+                )}
+              </Link>
+            ))}
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            {/* Apply Button */}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/contact"
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300"
@@ -189,7 +167,7 @@ const Header = () => {
             </motion.div>
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <motion.button
               whileTap={{ scale: 0.95 }}
@@ -216,9 +194,7 @@ const Header = () => {
                   to="/" 
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    isActive('/') 
-                      ? 'bg-yellow-400 text-slate-900' 
-                      : 'text-white hover:bg-slate-700'
+                    isActive('/') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
                   }`}
                 >
                   Home
@@ -227,28 +203,23 @@ const Header = () => {
                   to="/about" 
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    isActive('/about') 
-                      ? 'bg-yellow-400 text-slate-900' 
-                      : 'text-white hover:bg-slate-700'
+                    isActive('/about') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
                   }`}
                 >
                   About
                 </Link>
-                
-                {/* Mobile Courses Section */}
+
                 <div className="space-y-2">
                   <div className="text-yellow-400 font-semibold px-4 py-2 text-sm uppercase tracking-wider">
                     Courses
                   </div>
-                  {courses.map((course) => (
+                  {courses.map(course => (
                     <Link
                       key={course.path}
                       to={course.path}
                       onClick={() => setIsMenuOpen(false)}
                       className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ml-4 ${
-                        isActive(course.path) 
-                          ? 'bg-yellow-400 text-slate-900' 
-                          : 'text-white hover:bg-slate-700'
+                        isActive(course.path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
                       }`}
                     >
                       <div>
@@ -258,18 +229,20 @@ const Header = () => {
                     </Link>
                   ))}
                 </div>
-                
-                <Link 
-                  to="/contact" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    isActive('/contact') 
-                      ? 'bg-yellow-400 text-slate-900' 
-                      : 'text-white hover:bg-slate-700'
-                  }`}
-                >
-                  Contact
-                </Link>
+
+                {/* New pages for mobile */}
+                {['/skills', '/languages', '/price', '/contact'].map(path => (
+                  <Link
+                    key={path}
+                    to={path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                      isActive(path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
+                    }`}
+                  >
+                    {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
+                  </Link>
+                ))}
               </div>
             </motion.div>
           )}
