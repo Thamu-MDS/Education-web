@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Lock, Eye, AlertTriangle, Search, FileText, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';

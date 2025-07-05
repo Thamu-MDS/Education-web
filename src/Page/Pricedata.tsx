@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-
-
+import { useState } from 'react';
 import { ProgramData } from '../data/programData';
 import ProgramSelector from '../components/ProgramSelector';
 import SemesterSection from '../components/SemesterSection';

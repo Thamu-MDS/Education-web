@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Calculator, PieChart, Building, Briefcase, DollarSign, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';

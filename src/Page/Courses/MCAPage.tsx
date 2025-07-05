@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Database, Cloud, Brain, Smartphone, Shield, ArrowRight, CheckCircle, Star, Users, Award, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';

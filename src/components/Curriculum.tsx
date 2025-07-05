@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, BookOpen } from 'lucide-react';
 
 const Curriculum = () => {
