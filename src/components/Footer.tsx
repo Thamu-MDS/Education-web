@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const quickLinks = [
@@ -10,10 +11,10 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', href: '#', icon: '📘' },
-    { name: 'Twitter', href: '#', icon: '🐦' },
-    { name: 'LinkedIn', href: '#', icon: '💼' },
-    { name: 'Instagram', href: '#', icon: '📷' },
+    { name: 'Facebook', href: '#', icon: <Facebook size={20} /> },
+    { name: 'Twitter', href: '#', icon: <Twitter size={20} /> },
+    { name: 'LinkedIn', href: '#', icon: <Linkedin size={20} /> },
+    { name: 'Instagram', href: '#', icon: <Instagram size={20} /> },
   ];
 
   return (
@@ -28,7 +29,7 @@ const Footer: React.FC = () => {
           >
             <h3 className="text-2xl font-bold text-gold-500 mb-4">EduDistance</h3>
             <p className="text-gray-300 mb-4">
-              Empowering learners globally through technology-enabled education. 
+              Empowering learners globally through technology-enabled education.
               Making quality higher education accessible to everyone, everywhere.
             </p>
             <div className="flex space-x-4">
@@ -37,7 +38,7 @@ const Footer: React.FC = () => {
                   key={index}
                   href={social.href}
                   whileHover={{ scale: 1.2 }}
-                  className="text-2xl hover:text-gold-500 transition-colors duration-200"
+                  className="text-white hover:text-gold-500 transition-colors duration-200"
                   title={social.name}
                 >
                   {social.icon}

@@ -9,11 +9,11 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   const courses = [
+     { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
     { name: 'MCA', path: '/mca', description: 'Master of Computer Applications' },
-    { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
-    { name: 'BCA', path: '/bca', description: 'Bachelor of Computer Applications' },
     { name: 'MSc IT', path: '/msc-it', description: 'Master of Science in Information Technology' },
     { name: 'MSc Cyber Forensics', path: '/msc-cyber', description: 'Master of Science in Cyber Forensics' },
+    { name: 'BCA', path: '/bca', description: 'Bachelor of Computer Applications' },
     { name: 'B.Com', path: '/bcom', description: 'Bachelor of Commerce' }
   ];
 
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
           <Link to="/" className="flex items-center space-x-3 group">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="relative">
               <img
-                src="\src\assets\images\logo.jpg"
+                src="/Images/logo.jpg"
                 alt="Madras Distance Education Logo"
                 className="h-12 w-auto object-contain"
               />
