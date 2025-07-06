@@ -405,11 +405,7 @@ const MScITPage = () => {
                 </Link>
               </motion.div>
               
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <button className="bg-transparent border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300">
-                  Download Brochure
-                </button>
-              </motion.div>
+    
             </div>
           </motion.div>
         </div>

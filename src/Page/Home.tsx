@@ -12,7 +12,7 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="h-screen md:h-[100vh] lg:h-screen">
+      <div>
         <HeroSlider />
       </div>
       <Features />

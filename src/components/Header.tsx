@@ -10,9 +10,9 @@ const Header: React.FC = () => {
 
   const courses = [
      { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
-    { name: 'MCA', path: '/mca', description: 'Master of Computer Applications' },
     { name: 'MSc IT', path: '/msc-it', description: 'Master of Science in Information Technology' },
     { name: 'MSc Cyber Forensics', path: '/msc-cyber', description: 'Master of Science in Cyber Forensics' },
+    { name: 'MCA', path: '/mca', description: 'Master of Computer Applications' },
     { name: 'BCA', path: '/bca', description: 'Bachelor of Computer Applications' },
     { name: 'B.Com', path: '/bcom', description: 'Bachelor of Commerce' }
   ];

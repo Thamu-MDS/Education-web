@@ -12,6 +12,8 @@ import BComPage from './Page/Courses/BComPage';
 import AboutPage from './Page/AboutPage';
 import ContactPage from './Page/ContactPage';
 import Pricedata from './Page/Pricedata';
+import Lang from './Page/Lang';
+import Skill from './Page/Skill';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -27,7 +29,9 @@ function AnimatedRoutes() {
         <Route path="/msc-cyber" element={<MScCyberPage />} />
         <Route path="/bcom" element={<BComPage />} />
         <Route path="/about" element={<AboutPage />} />
-      <Route path="//price" element={<Pricedata />} />
+        <Route path="/skills" element={<Skill />} />
+        <Route path="/languages" element={<Lang />} />
+        <Route path="//price" element={<Pricedata />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
