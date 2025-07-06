@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,16 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const courses = [
     { name: 'MCA', path: '/mca', description: 'Master of Computer Applications' },
@@ -30,9 +21,7 @@ const Header: React.FC = () => {
 
   return (
     <motion.header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
+      className="fixed top-0 w-full z-50 bg-slate-900 backdrop-blur-md shadow-md transition-all duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -52,10 +41,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {[
-              { name: 'Home', path: '/' },
-              { name: 'About', path: '/about' }
-            ].map(link => (
+            {[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }].map(link => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -190,22 +176,10 @@ const Header: React.FC = () => {
               className="lg:hidden bg-slate-800/95 backdrop-blur-md border-t border-slate-700 rounded-b-xl overflow-hidden"
             >
               <div className="px-4 py-6 space-y-4 max-h-96 overflow-y-auto">
-                <Link 
-                  to="/" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    isActive('/') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
-                  }`}
-                >
+                <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
                   Home
                 </Link>
-                <Link 
-                  to="/about" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    isActive('/about') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
-                  }`}
-                >
+                <Link to="/about" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/about') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
                   About
                 </Link>
 
@@ -218,9 +192,7 @@ const Header: React.FC = () => {
                       key={course.path}
                       to={course.path}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ml-4 ${
-                        isActive(course.path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
-                      }`}
+                      className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ml-4 ${isActive(course.path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
                     >
                       <div>
                         <div className="font-semibold">{course.name}</div>
@@ -230,15 +202,12 @@ const Header: React.FC = () => {
                   ))}
                 </div>
 
-                {/* New pages for mobile */}
                 {['/skills', '/languages', '/price', '/contact'].map(path => (
                   <Link
                     key={path}
                     to={path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                      isActive(path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'
-                    }`}
+                    className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive(path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
                   >
                     {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
                   </Link>

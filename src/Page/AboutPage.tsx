@@ -43,38 +43,38 @@ const AboutPage = () => {
     { value: "95%", label: "Success Rate" }
   ];
 
-  const milestones = [
-    {
-      year: "1999",
-      title: "Foundation",
-      description: "Established as a pioneer in distance education with a vision to democratize quality education."
-    },
-    {
-      year: "2005",
-      title: "Digital Transformation",
-      description: "Launched online learning platform, becoming one of the first institutions to embrace digital education."
-    },
-    {
-      year: "2010",
-      title: "Program Expansion",
-      description: "Expanded course offerings to include MBA, MCA, and specialized professional programs."
-    },
-    {
-      year: "2015",
-      title: "Industry Partnerships",
-      description: "Formed strategic partnerships with leading companies for internships and placement opportunities."
-    },
-    {
-      year: "2020",
-      title: "Global Reach",
-      description: "Extended services internationally, serving students across multiple countries."
-    },
-    {
-      year: "2024",
-      title: "AI Integration",
-      description: "Integrated AI-powered learning tools and personalized education pathways."
-    }
-  ];
+  // const milestones = [
+  //   {
+  //     year: "1999",
+  //     title: "Foundation",
+  //     description: "Established as a pioneer in distance education with a vision to democratize quality education."
+  //   },
+  //   {
+  //     year: "2005",
+  //     title: "Digital Transformation",
+  //     description: "Launched online learning platform, becoming one of the first institutions to embrace digital education."
+  //   },
+  //   {
+  //     year: "2010",
+  //     title: "Program Expansion",
+  //     description: "Expanded course offerings to include MBA, MCA, and specialized professional programs."
+  //   },
+  //   {
+  //     year: "2015",
+  //     title: "Industry Partnerships",
+  //     description: "Formed strategic partnerships with leading companies for internships and placement opportunities."
+  //   },
+  //   {
+  //     year: "2020",
+  //     title: "Global Reach",
+  //     description: "Extended services internationally, serving students across multiple countries."
+  //   },
+  //   {
+  //     year: "2024",
+  //     title: "AI Integration",
+  //     description: "Integrated AI-powered learning tools and personalized education pathways."
+  //   }
+  // ];
 
   return (
     <motion.div
@@ -255,7 +255,7 @@ const AboutPage = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-slate-800">
+      {/* <section className="py-20 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -273,9 +273,9 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          <div className="relative">
+          <div className="relative"> */}
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-yellow-400"></div>
+            {/* <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-yellow-400"></div>
 
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -295,16 +295,16 @@ const AboutPage = () => {
                       <h3 className="text-white font-semibold text-xl mb-3">{milestone.title}</h3>
                       <p className="text-slate-300">{milestone.description}</p>
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full border-4 border-slate-800"></div>
+                  {/* <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full border-4 border-slate-800"></div>
                 </motion.div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-500">

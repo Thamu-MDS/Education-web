@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+
 interface Slide {
   id: number;
   title: string;
@@ -115,17 +116,16 @@ const slides: Slide[] = [
   }
 ];
 
+
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
-
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
@@ -139,13 +139,8 @@ const HeroSlider = () => {
     setIsAutoPlaying(false);
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    setIsAutoPlaying(false);
-  };
-
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-[700px] sm:min-h-screen overflow-hidden mt-20">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -155,7 +150,6 @@ const HeroSlider = () => {
           transition={{ duration: 0.8 }}
           className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
         >
-          {/* Background Image */}
           <motion.div
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
@@ -170,22 +164,18 @@ const HeroSlider = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/90"></div>
           </motion.div>
 
-          {/* Content */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center pt-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-              {/* Text Content */}
               <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="space-y-8"
               >
-                {/* Badge */}
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  className="inline-block"
                 >
                   <span className="bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold">
                     {slides[currentSlide].badge}
@@ -197,31 +187,30 @@ const HeroSlider = () => {
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="text-7xl lg:text-8xl font-bold text-white"
+                    className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white"
                   >
                     {slides[currentSlide].title}
                   </motion.h1>
-                  
+
                   <motion.p
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-2xl text-yellow-400 font-semibold uppercase tracking-wider"
+                    className="text-xl text-yellow-400 font-semibold uppercase tracking-wider"
                   >
                     {slides[currentSlide].subtitle}
                   </motion.p>
-                  
+
                   <motion.p
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
-                    className="text-lg text-slate-300 leading-relaxed max-w-2xl"
+                    className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl"
                   >
                     {slides[currentSlide].description}
                   </motion.p>
                 </div>
 
-                {/* CTA Buttons */}
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -237,7 +226,7 @@ const HeroSlider = () => {
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </motion.div>
-                  
+
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       to="/contact"
@@ -249,12 +238,11 @@ const HeroSlider = () => {
                   </motion.div>
                 </motion.div>
 
-                {/* Stats */}
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-700"
+                  className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-700"
                 >
                   {slides[currentSlide].stats.map((stat, index) => (
                     <motion.div
@@ -264,14 +252,13 @@ const HeroSlider = () => {
                       transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                       className="text-center"
                     >
-                      <div className="text-3xl font-bold text-yellow-400">{stat.value}</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-yellow-400">{stat.value}</div>
                       <div className="text-sm text-slate-400">{stat.label}</div>
                     </motion.div>
                   ))}
                 </motion.div>
               </motion.div>
 
-              {/* Image */}
               <motion.div
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -285,12 +272,11 @@ const HeroSlider = () => {
                     transition={{ duration: 0.8 }}
                     src={slides[currentSlide].image}
                     alt={slides[currentSlide].title}
-                    className="w-full h-[600px] object-cover"
+                    className="w-full h-[400px] sm:h-[600px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
                 </div>
-                
-                {/* Floating elements */}
+
                 <motion.div
                   initial={{ scale: 0, rotate: -180 }}
                   animate={{ scale: 1, rotate: 0 }}
@@ -299,7 +285,7 @@ const HeroSlider = () => {
                 >
                   Industry Ready
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ scale: 0, rotate: 180 }}
                   animate={{ scale: 1, rotate: 0 }}
@@ -314,47 +300,25 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex items-center space-x-4">
-          {/* Prev Button */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={prevSlide}
-            className="bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </motion.button>
+      {/* Left Button */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </motion.button>
 
-          {/* Dots */}
-          <div className="flex space-x-2">
-            {slides.map((_, index) => (
-              <motion.button
-                key={index}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'bg-yellow-400 w-8' 
-                    : 'bg-slate-600 hover:bg-slate-500'
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Next Button */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={nextSlide}
-            className="bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </motion.button>
-        </div>
-      </div>
+      {/* Right Button */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </motion.button>
 
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-slate-800 z-20">
