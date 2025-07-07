@@ -55,7 +55,7 @@ const slides: Slide[] = [
     id: 3,
     title: "MSc",
     subtitle: "Master of Science ",
-    description: "Advance your IT career with specialized knowledge in emerging technologies, system architecture, and digital transformation strategies for the modern enterprise.",
+    description: "M.Sc. is a postgraduate degree designed to provide in-depth knowledge in science and technical disciplines. It builds strong analytical, research, and problem-solving skills that prepare students for academic, research, and industry roles.",
     image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200",
     primaryCTA: "Explore MSc IT",
     secondaryCTA: "Apply Now",
@@ -286,24 +286,30 @@ const HeroSlider = () => {
       </AnimatePresence>
 
       {/* Left Button */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </motion.button>
+<motion.button
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+  onClick={prevSlide}
+  className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 
+             bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full 
+             backdrop-blur-sm transition-all duration-300 
+             focus:outline-none focus:ring-0 active:bg-slate-700"
+>
+  <ChevronLeft className="h-5 w-5" />
+</motion.button>
 
-      {/* Right Button */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
-      >
-        <ChevronRight className="h-5 w-5" />
-      </motion.button>
+{/* Right Button */}
+<motion.button
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+  onClick={nextSlide}
+  className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 
+             bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full 
+             backdrop-blur-sm transition-all duration-300 
+             focus:outline-none focus:ring-0 active:bg-slate-700"
+>
+  <ChevronRight className="h-5 w-5" />
+</motion.button>
 
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-slate-800 z-20">

@@ -8,7 +8,7 @@ function Pricedata() {
   const [selectedProgram, setSelectedProgram] = useState<keyof typeof ProgramData>('MBA');
 
   return (
-    <div className="min-h-screen bg-[#0B1C39] text-white">
+    <div className="min-h-screen bg-[#0B1C39] text-white mt-20">
     
       <ProgramSelector 
         selectedProgram={selectedProgram} 

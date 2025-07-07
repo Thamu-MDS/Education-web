@@ -6,33 +6,38 @@ const MBAPage = () => {
   const features = [
     {
       icon: TrendingUp,
-      title: "Strategic Management",
-      description: "Master strategic planning, competitive analysis, and business transformation methodologies."
+      title: "Finance",
+      description: "Corporate finance involves financial management and capital structure. Investments include portfolio management and risk analysis."
     },
     {
       icon: Users,
-      title: "Leadership Development",
-      description: "Develop essential leadership skills, team management, and organizational behavior expertise."
+      title: "Marketing",
+      description: "Branding focuses on brand positioning and identity. Digital strategies include social media and online advertising."
     },
     {
       icon: Globe,
-      title: "Global Business",
-      description: "Understand international markets, cross-cultural management, and global business strategies."
+      title: "HR Management",
+      description: "Recruitment involves talent acquisition and selection. Training includes employee development and training program design."
     },
     {
       icon: BarChart3,
-      title: "Financial Analytics",
-      description: "Learn advanced financial modeling, investment analysis, and corporate finance principles."
+      title: "Systems",
+      description: "ERP integrates business systems and manages implementation. Software project management uses agile methodologies"
     },
     {
       icon: Target,
-      title: "Marketing Strategy",
-      description: "Master digital marketing, brand management, and customer relationship strategies."
+      title: "Logistics & SCM",
+      description: "ERP integrates business systems and manages implementation. Software project management uses agile methodologies"
     },
     {
       icon: Briefcase,
-      title: "Entrepreneurship",
-      description: "Develop entrepreneurial mindset, startup strategies, and innovation management skills."
+      title: "Hospital Management",
+      description: "Healthcare operations involve hospital administration and patient care. Quality management ensures patient safety"
+    },
+    {
+      icon: Briefcase,
+      title: "Hospital Management",
+      description: "Healthcare operations involve hospital administration and patient care. Quality management ensures patient safety"
     }
   ];
 
@@ -40,31 +45,31 @@ const MBAPage = () => {
     {
       semester: "Semester 1",
       courses: [
-        "Principles of Management",
-        "Organizational Behavior",
-        "Managerial Economics",
+        "Management principles and Business Ethics ",
+        "Quantitative and ResearchMethods in Business",
+        "OrganisationalBehaviour",
         "Accounting for Managers",
-        "Business Communication"
+        "Managerial Economics"
       ]
     },
     {
       semester: "Semester 2",
       courses: [
-        "Marketing Management",
-        "Financial Management",
-        "Human Resource Management",
-        "Operations Management",
-        "Business Statistics"
+        "Legal Systems in Business",
+        "Applied Operations Research",
+        "strategic Management",
+        "InternationalBusiness",
+        "Management Information System"
       ]
     },
     {
       semester: "Semester 3",
       courses: [
-        "Strategic Management",
-        "International Business",
-        "Digital Marketing",
-        "Investment Analysis",
-        "Leadership and Change Management"
+        "Human Resource Management",
+        "Marketing Management",
+        "Operations Management",
+        "Financial Management",
+        "Innovation and Entrepreneurship"
       ]
     },
     {

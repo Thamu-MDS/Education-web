@@ -51,7 +51,7 @@ const ContactPage = () => {
 
   const courses = [
     "MCA - Master of Computer Applications",
-    "MBA - Master of Business Administration", 
+    "MBA - Master of Business Administration",
     "BCA - Bachelor of Computer Applications",
     "MSc IT - Master of Science in Information Technology",
     "MSc Cyber Forensics - Master of Science in Cyber Forensics",
@@ -83,12 +83,12 @@ const ContactPage = () => {
             >
               Get In Touch
             </motion.span>
-            
+
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
               Contact Us
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Ready to start your educational journey? We're here to help you every step of the way. 
+              Ready to start your educational journey? We're here to help you every step of the way.
               Get in touch with our admissions team for personalized guidance.
             </p>
           </motion.div>
@@ -263,16 +263,25 @@ const ContactPage = () => {
               className="space-y-8"
             >
               {/* Map Placeholder */}
-              <div className="bg-slate-800 p-8 rounded-xl border border-slate-700 h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-2">Visit Our Campus</h3>
-                  <p className="text-slate-300">
-                    123 Education Street<br />
-                    Chennai, Tamil Nadu 600001
-                  </p>
-                </div>
+              <div className="bg-slate-800 rounded-xl border border-slate-700 p-4 h-64 w-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="bg-white rounded-lg shadow-md overflow-hidden h-full w-full"
+                >
+                  <iframe
+                    title="Location Map"
+                    className="w-full h-full"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5790731004304!2d80.262750874843!3d13.062443687261345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526504a0f3792f%3A0xfc7d8e8cad27aa54!2sHETA%20INSTITUTE%20OF%20TECHNOLOGY!5e0!3m2!1sen!2sin!4v1751520011502!5m2!1sen!"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    style={{ border: 0 }}
+                  />
+                </motion.div>
               </div>
+
 
               {/* Quick Contact */}
               <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">

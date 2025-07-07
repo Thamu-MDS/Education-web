@@ -6,10 +6,8 @@ const languages = [
     code: 'en',
     name: 'English',
     nativeName: 'English',
-    flag: '🇺🇸',
     path: '/language/en',
     speakers: '1.5B',
-    difficulty: 'Beginner',
     timeToLearn: '6-12 months',
     description: 'Global lingua franca, essential for business and technology',
     teachingMethods: [
@@ -43,10 +41,9 @@ const languages = [
     code: 'hi',
     name: 'Hindi',
     nativeName: 'हिन्दी',
-    flag: '🇮🇳',
     path: '/language/hi',
-    speakers: '600M',
-    difficulty: 'Intermediate',
+    speakers: '100M',
+  
     timeToLearn: '12-18 months',
     description: 'Official language of India, rich cultural heritage and literature',
     teachingMethods: [
@@ -80,10 +77,9 @@ const languages = [
     code: 'de',
     name: 'German',
     nativeName: 'Deutsch',
-    flag: '🇩🇪',
     path: '/language/de',
     speakers: '100M',
-    difficulty: 'Advanced',
+    
     timeToLearn: '18-24 months',
     description: 'Language of engineering, philosophy, and European business',
     teachingMethods: [
@@ -117,10 +113,9 @@ const languages = [
     code: 'ja',
     name: 'Japanese',
     nativeName: '日本語',
-    flag: '🇯🇵',
     path: '/language/ja',
     speakers: '125M',
-    difficulty: 'Expert',
+   
     timeToLearn: '24-36 months',
     description: 'Complex writing system, unique cultural expressions, business importance',
     teachingMethods: [
@@ -154,10 +149,9 @@ const languages = [
     code: 'fr',
     name: 'French',
     nativeName: 'Français',
-    flag: '🇫🇷',
     path: '/language/fr',
     speakers: '280M',
-    difficulty: 'Intermediate',
+    
     timeToLearn: '12-18 months',
     description: 'Language of diplomacy, cuisine, and international organizations',
     teachingMethods: [
@@ -188,16 +182,6 @@ const languages = [
     ]
   }
 ];
-
-function getDifficultyColor(difficulty: string) {
-  switch (difficulty) {
-    case 'Beginner': return 'text-green-400 bg-green-400/20';
-    case 'Intermediate': return 'text-yellow-400 bg-yellow-400/20';
-    case 'Advanced': return 'text-orange-400 bg-orange-400/20';
-    case 'Expert': return 'text-red-400 bg-red-400/20';
-    default: return 'text-gray-400 bg-gray-400/20';
-  }
-}
 
 function LanguageCard({ language, index }: { language: any; index: number }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -273,11 +257,7 @@ function LanguageCard({ language, index }: { language: any; index: number }) {
                 }`}>{language.nativeName}</p>
               </div>
             </div>
-            <div className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${getDifficultyColor(language.difficulty)} ${
-              showDetails ? 'scale-110 shadow-lg' : ''
-            }`}>
-              {language.difficulty}
-            </div>
+            
           </div>
 
           {/* Quick Stats */}
@@ -441,12 +421,12 @@ function Lang() {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent">
-            Master Any Language
+            Master Language
           </h1>
           
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Choose your target language and discover proven teaching methods tailored for effective learning.
-            <span className="text-amber-400 font-medium"> Each language comes with specialized approaches and cultural insights.</span>
+            Our goal is not just to educate—but to elevate. That’s why we now offer 5 essential language courses absolutely free with every enrollment.
+            <span className="text-amber-400 font-medium">This unique benefit helps our students build global communication skills.</span>
           </p>
         </div>
 
