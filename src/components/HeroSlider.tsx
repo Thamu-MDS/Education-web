@@ -18,24 +18,8 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  {
+    {
     id: 1,
-    title: "MCA",
-    subtitle: "Master of Computer Applications",
-    description: "Transform your passion for technology into a rewarding career. Our comprehensive MCA program combines theoretical knowledge with hands-on experience in cutting-edge technologies.",
-    image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    primaryCTA: "Explore MCA",
-    secondaryCTA: "Apply Now",
-    link: "/mca",
-    stats: [
-      { value: "2000+", label: "Students Enrolled" },
-      { value: "95%", label: "Placement Rate" },
-      { value: "3 Years", label: "Duration" }
-    ],
-    badge: "Most Popular"
-  },
-  {
-    id: 2,
     title: "MBA",
     subtitle: "Master of Business Administration",
     description: "Lead the future of business with our comprehensive MBA program. Develop strategic thinking, leadership skills, and business acumen to excel in today's competitive market.",
@@ -51,9 +35,26 @@ const slides: Slide[] = [
     badge: "Executive Track"
   },
   {
+    
+    id: 2,
+    title: "MCA",
+    subtitle: "Master of Computer Applications",
+    description: "Transform your passion for technology into a rewarding career. Our comprehensive MCA program combines theoretical knowledge with hands-on experience in cutting-edge technologies.",
+    image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    primaryCTA: "Explore MCA",
+    secondaryCTA: "Apply Now",
+    link: "/mca",
+    stats: [
+      { value: "2000+", label: "Students Enrolled" },
+      { value: "95%", label: "Placement Rate" },
+      { value: "3 Years", label: "Duration" }
+    ],
+    badge: "Most Popular"
+  },
+  {
     id: 3,
-    title: "MSc IT",
-    subtitle: "Master of Science in Information Technology",
+    title: "MSc",
+    subtitle: "Master of Science ",
     description: "Advance your IT career with specialized knowledge in emerging technologies, system architecture, and digital transformation strategies for the modern enterprise.",
     image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200",
     primaryCTA: "Explore MSc IT",
@@ -68,22 +69,6 @@ const slides: Slide[] = [
   },
   {
     id: 4,
-    title: "MSc Cyber Forensics",
-    subtitle: "Master of Science in Cyber Forensics",
-    description: "Become a cybersecurity expert with advanced training in digital forensics, incident response, and cyber threat analysis to protect organizations from digital crimes.",
-    image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    primaryCTA: "Explore Cyber Forensics",
-    secondaryCTA: "Apply Now",
-    link: "/msc-cyber",
-    stats: [
-      { value: "500+", label: "Security Experts" },
-      { value: "99%", label: "Job Security" },
-      { value: "2 Years", label: "Duration" }
-    ],
-    badge: "High Demand"
-  },
-  {
-    id: 5,
     title: "BCA",
     subtitle: "Bachelor of Computer Applications",
     description: "Start your journey in computer science with our foundational BCA program. Build strong programming skills and technical expertise for a successful tech career.",
@@ -99,7 +84,7 @@ const slides: Slide[] = [
     badge: "Foundation Course"
   },
   {
-    id: 6,
+    id: 5,
     title: "B.Com",
     subtitle: "Bachelor of Commerce",
     description: "Build a strong foundation in business, accounting, and finance. Our B.Com program prepares you for diverse career opportunities in the corporate world.",
