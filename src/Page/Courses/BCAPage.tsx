@@ -38,63 +38,69 @@ const BCAPage = () => {
 
   const curriculum = [
     {
-      year: "First Year",
+      year: "SEMESTER 1",
       courses: [
-        "Programming Fundamentals with C",
-        "Computer Fundamentals & Organization",
-        "Mathematics for Computer Science",
-        "Digital Electronics",
-        "Communication Skills",
+        "Tamil or other language ",
+        "English",
+        "Fundamentals of Digital Computers",
+        "Practical – I :  PC Software Lab",
+        "Mathematics – I  "
+      ]
+    },
+    {
+      year: "SEMESTER 2",
+      courses: [
+        "Tamil or other language",
+        "English ",
+        "Programming in C ",
+        "Practical – II :   Programming in C Lab ",
+        "Mathematics – II "
+      ]
+    },
+    {
+      year: "SEMESTER 3",
+      courses: [
+        "Programming in C++ and Data Structures ",
+        "Microprocessors and its Applications",
+        "Numerical and Statistical Methods  ",
+        "Practical-III : Programming  in C++ using Data structures   ",
+        "Financial Accounting "
+      ]
+    },
+     {
+      year: "SEMESTER 4",
+      courses: [
+        "Programming in Java",
+        "Operating System",
+        "Computer Graphics ",
+        "Practical-IV :  Java Programming Lab",
+        "Cost and Management Accounting "
+      ]
+    },
+    {
+      year: "SEMESTER 5",
+      courses: [
+        "Database Management System   ",
+        "Software Engineering",
+        "Resource Management Techniques ",
+        "Practical-V :   RDBMS Lab",
+       "Visual Programming ",
         "Environmental Studies"
       ]
     },
     {
-      year: "Second Year",
+      year: "SEMESTER 6",
       courses: [
-        "Object-Oriented Programming with C++",
-        "Data Structures and Algorithms",
-        "Database Management Systems",
-        "Computer Networks",
-        "Operating Systems",
-        "Software Engineering"
-      ]
-    },
-    {
-      year: "Third Year",
-      courses: [
-        "Web Development (HTML, CSS, JavaScript)",
-        "Java Programming",
-        "Mobile Application Development",
-        "Computer Graphics",
-        "Project Work",
-        "Industrial Training"
+        "Web Technology",
+        "Data Communication and Net Working",
+        "Software Testing ",
+        "Practical-VI :    Web Application Lab  ",
+        "Multimedia Systems",
+        "Value Education "
       ]
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Ravi Kumar",
-      role: "Software Developer at Infosys",
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "BCA gave me a solid foundation in programming and software development. The practical approach helped me secure my first job easily.",
-      rating: 5
-    },
-    {
-      name: "Sneha Patel",
-      role: "Web Developer at TCS",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The comprehensive curriculum and hands-on projects prepared me well for the industry. Great starting point for a tech career.",
-      rating: 5
-    },
-    {
-      name: "Amit Sharma",
-      role: "Mobile App Developer",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "BCA provided me with diverse skills in programming, web development, and mobile apps. Perfect foundation for my freelancing career.",
-      rating: 5
-    }
-  ];
 
   const stats = [
     { icon: Users, value: "1200+", label: "Students Enrolled" },
@@ -311,64 +317,6 @@ const BCAPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Success Stories from Our Graduates
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our BCA graduates have successfully launched their careers in software development, 
-              web development, and various IT roles. Here are their experiences with our program.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

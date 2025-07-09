@@ -40,66 +40,42 @@ const MScCyberPage = () => {
     {
       semester: "Semester 1",
       courses: [
-        "Fundamentals of Cyber Forensics",
-        "Computer Networks and Security",
-        "Digital Evidence and Law",
-        "Operating Systems Forensics",
-        "Cryptography and Network Security"
+        "Introduction to Cyber Criminology  ",
+        "Networking and Communication Protocols ",
+        "Introduction to Information Security ",
+        "IT Infrastructure and Cloud Computing",
+        "Forms of Cyber Crimes "
       ]
     },
     {
       semester: "Semester 2",
       courses: [
-        "Malware Analysis and Reverse Engineering",
-        "Network Forensics and Traffic Analysis",
-        "Mobile Device Forensics",
-        "Database Forensics",
-        "Incident Response and Management"
+        "Network Security and Cryptography ",
+        "Basics of Cyber Forensics ",
+        "IT and Telecom Frauds  & Countermeasures ",
+        "Practical- I  –  (Networking and Information Security)  ",
+        "BFSI Frauds & Countermeasures "
       ]
     },
     {
       semester: "Semester 3",
       courses: [
-        "Advanced Digital Forensics",
-        "Cloud Forensics and Security",
-        "Cyber Threat Intelligence",
-        "Ethical Hacking and Penetration Testing",
-        "Research Methodology"
+        "Database Management Security ",
+        "Advanced Cyber Forensics ",
+        "Advanced Information  Security",
+        "Practical – II (Cyber Forensics)",
+        "Data Privacy"
       ]
     },
     {
       semester: "Semester 4",
       courses: [
-        "Emerging Threats and Technologies",
-        "Cyber Law and Legal Procedures",
-        "Industry Internship",
-        "Dissertation Project",
-        "Professional Certification Preparation"
+        "Application Security ",
+        "Governance, Risk  &Compliance ",
+        "Business Continuity & Disaster Recovery Management ",
+        "Security Testing ",
+        "Cyber Laws &  Intellectual Property Rights "
       ]
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Kavya Sharma",
-      role: "Cyber Forensics Analyst at CBI",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The program provided comprehensive training in digital forensics and cyber law. It prepared me perfectly for my role in cybercrime investigation.",
-      rating: 5
-    },
-    {
-      name: "Rohit Gupta",
-      role: "Security Consultant at Deloitte",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The hands-on approach to incident response and threat analysis gave me practical skills that are directly applicable in my consulting work.",
-      rating: 5
-    },
-    {
-      name: "Anita Verma",
-      role: "Forensics Expert at CERT-In",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The program's focus on emerging threats and advanced forensics techniques made me a subject matter expert in the field.",
-      rating: 5
     }
   ];
 
@@ -133,7 +109,7 @@ const MScCyberPage = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-block bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold"
+                  className="inline-block bg-amber-500 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold"
                 >
                   High Demand Field
                 </motion.span>
@@ -203,7 +179,7 @@ const MScCyberPage = () => {
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -top-4 -right-4 bg-red-500 text-white px-4 py-2 rounded-full font-semibold text-sm shadow-lg"
+                className="absolute -top-4 -right-4 bg-amber-500 text-slate-900 px-4 py-2 rounded-full font-semibold text-sm shadow-lg"
               >
                 Critical Skills
               </motion.div>
@@ -249,10 +225,10 @@ const MScCyberPage = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition-all duration-300 group"
+                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-amber-500 transition-all duration-300 group"
               >
                 <div className="mb-6">
-                  <div className="bg-red-500 p-3 rounded-lg w-fit group-hover:bg-red-600 transition-colors">
+                  <div className="bg-amber-500 p-3 rounded-lg w-fit group-hover:bg-amber-500 transition-colors">
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -295,9 +271,9 @@ const MScCyberPage = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition-all duration-300"
+                className="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-amber-500 transition-all duration-300"
               >
-                <h3 className="text-2xl font-semibold text-red-400 mb-6">{sem.semester}</h3>
+                <h3 className="text-2xl font-semibold text-amber-500 mb-6">{sem.semester}</h3>
                 <ul className="space-y-3">
                   {sem.courses.map((course, courseIndex) => (
                     <motion.li
@@ -319,65 +295,8 @@ const MScCyberPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Cyber Security Professionals
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our graduates are protecting organizations and investigating cybercrimes at leading 
-              security agencies and corporations. Here are their success stories.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition-all duration-300"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-red-500 to-red-600">
+      <section className="py-20 bg-gradient-to-r from-amber-500 to-amber-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -386,10 +305,10 @@ const MScCyberPage = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
               Protect the Digital World
             </h2>
-            <p className="text-xl text-red-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-900 mb-8 max-w-3xl mx-auto">
               Join the fight against cybercrime with our MSc Cyber Forensics program. 
               Develop the skills to investigate digital crimes and protect organizations from cyber threats.
             </p>
@@ -398,7 +317,7 @@ const MScCyberPage = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/contact"
-                  className="bg-white hover:bg-gray-100 text-red-600 font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center group shadow-lg"
+                  className="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center group shadow-lg"
                 >
                   Apply Now
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

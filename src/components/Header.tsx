@@ -29,12 +29,12 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-3 rounded-full group">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="relative">
               <img
                 src="/Images/logo.jpg"
                 alt="Madras Distance Education Logo"
-                className="h-12 w-auto object-contain"
+                className="h-12 w-auto object-contain rounded-full"
               />
             </motion.div>
           </Link>

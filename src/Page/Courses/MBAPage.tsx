@@ -36,8 +36,8 @@ const MBAPage = () => {
     },
     {
       icon: Briefcase,
-      title: "Hospital Management",
-      description: "Healthcare operations involve hospital administration and patient care. Quality management ensures patient safety"
+      title: "Business Data Analytics",
+      description: "Business Data Analytics uses data and tools like visualization and machine learning to uncover insights, improve decisions, and boost business performance."
     }
   ];
 
@@ -83,31 +83,6 @@ const MBAPage = () => {
       ]
     }
   ];
-
-  const testimonials = [
-    {
-      name: "Vikram Singh",
-      role: "VP Strategy at Reliance Industries",
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The MBA program provided me with strategic thinking capabilities and leadership skills that accelerated my career growth significantly.",
-      rating: 5
-    },
-    {
-      name: "Meera Reddy",
-      role: "Marketing Director at Unilever",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The comprehensive curriculum and case study approach prepared me for real-world business challenges. Highly recommend this program.",
-      rating: 5
-    },
-    {
-      name: "Arjun Mehta",
-      role: "Founder & CEO at TechStart",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The entrepreneurship modules and mentorship helped me launch my own startup. The network I built here is invaluable.",
-      rating: 5
-    }
-  ];
-
   const stats = [
     { icon: Users, value: "1500+", label: "Alumni Network" },
     { icon: Award, value: "98%", label: "Job Placement" },
@@ -318,63 +293,6 @@ const MBAPage = () => {
                     </motion.li>
                   ))}
                 </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Leaders Shaping Industries
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our MBA graduates are leading major corporations and successful startups worldwide. 
-              Discover how our program transformed their careers and leadership capabilities.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>

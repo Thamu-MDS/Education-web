@@ -366,19 +366,6 @@ function LanguageCard({ language, index }: { language: any; index: number }) {
                 </div>
               </div>
 
-              {/* Enhanced Enroll Now Button */}
-              <div className="mt-6">
-                <button className="w-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:via-amber-600 hover:to-amber-700 text-slate-900 font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/50 active:scale-95 group">
-                  <div className="flex items-center justify-center space-x-3">
-                    <GraduationCap className="w-5 h-5 group-hover:animate-bounce" />
-                    <span className="text-lg">Enroll Now in {language.name}</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                  <div className="text-sm mt-1 opacity-80">
-                    Start your language journey today
-                  </div>
-                </button>
-              </div>
             </div>
           </div>
         </div>

@@ -40,33 +40,33 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: 1,
         subjects: [
-          "Management Principles and Business Ethics",
-          "Organizational Behaviour",
-          "Managerial Communication",
-          "Statistics for Managers",
-          "Accounting for Management"
+          "Management principles and Business Ethics ",
+          "Quantitative and ResearchMethods in Business",
+          "OrganisationalBehaviour",
+          "Accounting for Managers",
+          "Managerial Economics"
         ],
         price: "₹2,500"
       },
       {
         semester: 2,
         subjects: [
-          "Financial Management",
-          "Marketing Management",
-          "Human Resource Management",
-          "Operations Management",
-          "Business Law"
+          "Legal Systems in Business",
+          "Applied Operations Research",
+          "strategic Management",
+          "InternationalBusiness",
+          "Management Information System"
         ],
         price: "₹2,500"
       },
       {
         semester: 3,
         subjects: [
-          "Strategic Management",
-          "International Business",
-          "Entrepreneurship Development",
-          "Management Information Systems",
-          "Research Methodology"
+          "Human Resource Management",
+          "Marketing Management",
+          "Operations Management",
+          "Financial Management",
+          "Innovation and Entrepreneurship"
         ],
         price: "₹2,500"
       },
@@ -86,11 +86,11 @@ export const ProgramData: Record<string, Program> = {
           },
           subjects: {
             subjects: [
+              "Entrepreneurship Development",
               "Business Analytics",
               "Corporate Governance",
-              "Innovation Management",
-              "Digital Transformation",
-              "Leadership Development"
+              "Industry Project",
+              "Management Seminar"
             ],
             price: "₹2,500"
           }
@@ -175,60 +175,43 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: 1,
         subjects: [
-          "Mathematical Foundations for Computer Science",
-          "Programming in C and Data Structures",
-          "Computer Organization and Architecture",
-          "Discrete Mathematics",
-          "Professional Communication"
+          "C++ & Data Structures  ",
+          "Digital Logic Fundamentals  ",
+          "Database Management Systems ",
+          "Practical-I: DS using C++  Lab",
+          "Practical-II: RDBMS Lab",
+          "Accounting & Financial Management",
+          "Operating Systems"
         ],
         price: "₹2,500"
       },
       {
         semester: 2,
         subjects: [
-          "Object-Oriented Programming with Java",
-          "Database Management Systems",
-          "Operating Systems",
-          "Software Engineering",
-          "Computer Networks"
+          "Design and Analysis od Algorithms",
+          "Object Oriented Analysis and Design ",
+          "Artificial Intelligence ",
+          "Practical-III: OOAD Lab ",
+          "Practical-IV: Web Based Application Development Lab.",
+          "Web Based Application Development  ",
+          "Computer Network "
         ],
         price: "₹2,500"
       },
       {
         semester: 3,
         subjects: [
-          "Web Technologies and Programming",
-          "Design and Analysis of Algorithms",
-          "System Programming",
-          "Computer Graphics and Multimedia",
-          "Management Information Systems"
+          "Machine Learning  ",
+          "Practical-V:  Machine Learning Lab  ",
+          "Practical-VI:  Mini Project (Group Project)  ",
+          "Software Project Management ",
+          "Cloud Computing ",
+          "Mobile Application Development "
         ],
         price: "₹2,500"
       },
       {
         semester: 4,
-        subjects: [
-          "Advanced Java Programming",
-          "Mobile Application Development",
-          "Network Programming",
-          "Software Project Management",
-          "Cyber Security Fundamentals"
-        ],
-        price: "₹2,500"
-      },
-      {
-        semester: 5,
-        subjects: [
-          "Artificial Intelligence and Machine Learning",
-          "Cloud Computing",
-          "Big Data Analytics",
-          "Internet of Things (IoT)",
-          "Research Methodology"
-        ],
-        price: "₹2,500"
-      },
-      {
-        semester: 6,
         subjects: [],
         price: "",
         hasChoice: true,
@@ -302,7 +285,7 @@ export const ProgramData: Record<string, Program> = {
     ]
   },
   MSC_CYBER: {
-    title: "Master of Science in Cyber Security",
+    title: "Master of Science in Cyber Forensicn",
     description: "Advanced cybersecurity program focusing on protecting digital assets, ethical hacking, forensics, and security management in the modern digital landscape.",
     semesterTitle: "Semester-wise Cyber Security Curriculum",
     semesterDescription: "Comprehensive cybersecurity program to build expertise in digital security and threat management",
@@ -310,33 +293,33 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: 1,
         subjects: [
-          "Fundamentals of Cybersecurity",
-          "Network Security Principles",
-          "Cryptography and Data Protection",
-          "Operating System Security",
-          "Security Risk Assessment"
+          "Introduction to Cyber Criminology  ",
+          "Networking and Communication Protocols ",
+          "Introduction to Information Security ",
+          "IT Infrastructure and Cloud Computing",
+          "Forms of Cyber Crimes "
         ],
         price: "₹2,500"
       },
       {
         semester: 2,
         subjects: [
-          "Ethical Hacking and Penetration Testing",
-          "Digital Forensics",
-          "Malware Analysis",
-          "Web Application Security",
-          "Incident Response Management"
+          "Network Security and Cryptography ",
+          "Basics of Cyber Forensics ",
+          "IT and Telecom Frauds  & Countermeasures ",
+          "Practical- I  –  (Networking and Information Security)  ",
+          "BFSI Frauds & Countermeasures "
         ],
         price: "₹2,500"
       },
       {
         semester: 3,
         subjects: [
-          "Advanced Network Security",
-          "Cloud Security Architecture",
-          "Mobile Security",
-          "IoT Security",
-          "Security Governance and Compliance"
+          "Database Management Security ",
+          "Advanced Cyber Forensics ",
+          "Advanced Information  Security",
+          "Practical – II (Cyber Forensics)",
+          "Data Privacy"
         ],
         price: "₹2,500"
       },
@@ -356,11 +339,11 @@ export const ProgramData: Record<string, Program> = {
           },
           subjects: {
             subjects: [
-              "Cyber Threat Intelligence",
-              "Security Operations Center (SOC)",
-              "Advanced Persistent Threats",
-              "Blockchain Security",
-              "Professional Ethics in Cybersecurity"
+              "Application Security ",
+              "Governance, Risk  &Compliance ",
+              "Business Continuity & Disaster Recovery Management ",
+              "Security Testing ",
+              "Cyber Laws &  Intellectual Property Rights "
             ],
             price: "₹2,500"
           }
@@ -412,33 +395,37 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: 1,
         subjects: [
-          "Advanced Programming Concepts",
-          "Database Management Systems",
-          "Computer Networks",
-          "Software Engineering",
-          "Data Structures and Algorithms"
+          "C++ and Data Structures ",
+          "Computer Architecture ",
+          "Data Base Management Systems",
+          "Practical – I: Data Structures Lab. Using C ++ ",
+          "Practical – II: RDBMS Lab. ",
+          "Visual Programming"
         ],
         price: "₹2,500"
       },
       {
         semester: 2,
         subjects: [
-          "Web Technologies",
-          "Mobile Application Development",
-          "System Analysis and Design",
-          "Network Administration",
-          "Object-Oriented Programming"
+          "Operating Systems",
+          "Programming in Java ",
+          "Practical – III: Java Programming Lab ",
+          "Data Warehousing and data Mining ",
+          "Dot Net Programming",
+          "Practical – IV: Dot Net Programming Lab. "
         ],
         price: "₹2,500"
       },
       {
         semester: 3,
         subjects: [
-          "Cloud Computing",
-          "Artificial Intelligence",
-          "Machine Learning",
-          "Big Data Analytics",
-          "Enterprise Resource Planning"
+          "Computer Networks",
+          "Design and Analysis of Algorithms ",
+          "Advanced Java Programming ",
+          "Information Security ",
+          "Practical – V: Advanced Java Lab. ",
+          "Practical – VI: Mini Project ",
+          "Mobile Computing "
         ],
         price: "₹2,500"
       },
@@ -514,55 +501,56 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: 1,
         subjects: [
-          "Fundamentals of Computers",
-          "Programming in C",
-          "Mathematics for Computing",
-          "Digital Electronics",
-          "Communication Skills"
+          "Tamil or other language ",
+          "English",
+          "Fundamentals of Digital Computers",
+          "Practical – I :  PC Software Lab",
+          "Mathematics – I  "
         ],
         price: "₹2,500"
       },
       {
         semester: 2,
         subjects: [
-          "Data Structures",
-          "Object-Oriented Programming with C++",
-          "Computer Organization",
-          "Discrete Mathematics",
-          "Environmental Studies"
+          "Tamil or other language",
+          "English ",
+          "Programming in C ",
+          "Practical – II :   Programming in C Lab ",
+          "Mathematics – II "
         ],
         price: "₹2,500"
       },
       {
         semester: 3,
         subjects: [
-          "Database Management Systems",
-          "Java Programming",
-          "Computer Networks",
-          "Operating Systems",
-          "Software Engineering"
+          "Programming in C++ and Data Structures ",
+          "Microprocessors and its Applications",
+          "Numerical and Statistical Methods  ",
+          "Practical-III : Programming  in C++ using Data structures   ",
+          "Financial Accounting "
         ],
         price: "₹2,500"
       },
       {
         semester: 4,
         subjects: [
-          "Web Technologies",
-          "Python Programming",
-          "Computer Graphics",
-          "System Analysis and Design",
-          "Mobile Application Development"
+          "Programming in Java",
+          "Operating System",
+          "Computer Graphics ",
+          "Practical-IV :  Java Programming Lab",
+          "Cost and Management Accounting "
         ],
         price: "₹2,500"
       },
       {
         semester: 5,
         subjects: [
-          "Advanced Java",
-          "Data Mining",
-          "Network Security",
-          "E-Commerce",
-          "Internship/Industrial Training"
+          "Database Management System   ",
+          "Software Engineering",
+          "Resource Management Techniques ",
+          "Practical-V :   RDBMS Lab",
+          "Visual Programming ",
+          "Environmental Studies"
         ],
         price: "₹2,500"
       },
@@ -582,11 +570,12 @@ export const ProgramData: Record<string, Program> = {
           },
           subjects: {
             subjects: [
-              "Cloud Computing",
-              "Artificial Intelligence",
-              "Software Testing",
-              "IT Project Management",
-              "Emerging Technologies"
+              "Web Technology",
+              "Data Communication and Net Working",
+              "Software Testing ",
+              "Practical-VI :    Web Application Lab  ",
+              "Multimedia Systems",
+              "Value Education "
             ],
             price: "₹2,500"
           }
@@ -603,55 +592,55 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: 1,
         subjects: [
+          "Tamil or other language ",
+          "English",
           "Financial Accounting",
-          "Business Mathematics",
-          "Principles of Management",
-          "Business Communication",
-          "Environmental Studies"
+          "Business Communication ",
+          "Business Economics "
         ],
         price: "₹2,500"
       },
       {
         semester: 2,
         subjects: [
-          "Corporate Accounting",
-          "Business Statistics",
-          "Microeconomics",
-          "Business Law",
-          "Computer Applications in Business"
+          "Tamil or other language",
+          "English ",
+          "Advanced Financial Accounting  ",
+          "Principles of Management  ",
+          "Indian Economy "
         ],
         price: "₹2,500"
       },
       {
         semester: 3,
         subjects: [
-          "Cost Accounting",
-          "Macroeconomics",
-          "Company Law",
-          "Banking and Insurance",
-          "Marketing Management"
+          "Corporate Accounting -I ",
+          "Business Laws ",
+          "Banking Theory, Law & Practice ",
+          "Business Statistics & Operation Research - I ",
+          "Indian Constitution "
         ],
         price: "₹2,500"
       },
       {
         semester: 4,
         subjects: [
-          "Management Accounting",
-          "Financial Management",
-          "Income Tax Law",
-          "Human Resource Management",
-          "Research Methodology"
+          "Corporate Accounting – II",
+          "Company Law ",
+          "Financial Services  ",
+          "Business Statistics & Operation Research - II ",
+          "Basics of Psychology  "
         ],
         price: "₹2,500"
       },
       {
         semester: 5,
         subjects: [
-          "Auditing",
-          "International Business",
-          "Goods and Service Tax",
-          "Entrepreneurship Development",
-          "Business Ethics"
+          "Cost Accounting  ",
+          "Practical Auditing",
+          "Financial Management ",
+          "Marketing Management",
+          "Environmental Studies "
         ],
         price: "₹2,500"
       },
@@ -671,11 +660,11 @@ export const ProgramData: Record<string, Program> = {
           },
           subjects: {
             subjects: [
-              "Financial Markets",
-              "Strategic Management",
-              "E-Commerce",
-              "Project Management",
-              "Advanced Business Analytics"
+              "Management Accounting ",
+              "Business Taxation",
+              "Entrepreneurial Development ",
+              "Portfolio Management   ",
+              "Value Education"
             ],
             price: "₹2,500"
           }

@@ -40,69 +40,44 @@ const MScITPage = () => {
     {
       semester: "Semester 1",
       courses: [
-        "Advanced Programming Concepts",
-        "System Analysis and Design",
-        "Database Management Systems",
-        "Computer Networks and Security",
-        "Research Methodology"
+        "C++ and Data Structures ",
+        "Computer Architecture ",
+        "Data Base Management Systems",
+        "Practical – I: Data Structures Lab. Using C ++ ",
+        "Practical – II: RDBMS Lab. ",
+        "Visual Programming"
       ]
     },
     {
       semester: "Semester 2",
       courses: [
-        "Cloud Computing Architecture",
-        "Big Data Analytics",
-        "Enterprise Application Development",
-        "IT Project Management",
-        "Software Quality Assurance"
+        "Operating Systems",
+        "Programming in Java ",
+        "Practical – III: Java Programming Lab ",
+        "Data Warehousing and data Mining ",
+        "Dot Net Programming",
+        "Practical – IV: Dot Net Programming Lab. "
       ]
     },
     {
       semester: "Semester 3",
       courses: [
-        "Artificial Intelligence in IT",
-        "Cybersecurity and Risk Management",
-        "Mobile and Web Technologies",
-        "IT Governance and Compliance",
-        "Elective Specialization"
+        "Computer Networks",
+        "Design and Analysis of Algorithms ",
+        "Advanced Java Programming ",
+        "Information Security ",
+        "Practical – V: Advanced Java Lab. ",
+        "Practical – VI: Mini Project ",
+        "Mobile Computing "
       ]
     },
     {
       semester: "Semester 4",
       courses: [
-        "Emerging Technologies",
-        "Digital Transformation Strategies",
-        "Industry Internship",
-        "Dissertation Project",
-        "Seminar and Presentation"
+        "Project & Viva – voce ",
       ]
     }
   ];
-
-  const testimonials = [
-    {
-      name: "Rajesh Kumar",
-      role: "Cloud Architect at Amazon",
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The MSc IT program provided me with comprehensive knowledge of cloud technologies and system architecture. It directly contributed to my role as a Cloud Architect.",
-      rating: 5
-    },
-    {
-      name: "Priya Nair",
-      role: "IT Manager at Wipro",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The program's focus on IT governance and emerging technologies prepared me for leadership roles in enterprise IT management.",
-      rating: 5
-    },
-    {
-      name: "Arjun Singh",
-      role: "Data Scientist at IBM",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The big data analytics and AI modules were exceptional. They gave me the skills needed to transition into data science successfully.",
-      rating: 5
-    }
-  ];
-
   const stats = [
     { icon: Users, value: "800+", label: "IT Professionals" },
     { icon: Award, value: "96%", label: "Industry Placement" },
@@ -318,64 +293,6 @@ const MScITPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">
-              IT Leaders Making Impact
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our MSc IT graduates are leading technology initiatives at major corporations worldwide. 
-              Discover how our program accelerated their careers in IT leadership.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

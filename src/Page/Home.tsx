@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import HeroSlider from '../components/HeroSlider';
 import Features from '../components/Features';
-import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
 
 const Home = () => {
@@ -12,11 +11,11 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div>
+      <div className='relative block  overflow-hidden  h-[71.5rem]'>
         <HeroSlider />
       </div>
       <Features />
-      <Testimonials />
+     
       <CTA />
     </motion.div>
   );

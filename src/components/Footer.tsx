@@ -4,17 +4,25 @@ import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
     { name: 'Courses', href: '#courses' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const socialLinks = [
-    { name: 'Facebook', href: '#', icon: <Facebook size={20} /> },
+    { name: 'Facebook', href: 'https://www.facebook.com/share/16hXrA32wt/', icon: <Facebook size={20} /> },
     { name: 'Twitter', href: '#', icon: <Twitter size={20} /> },
-    { name: 'LinkedIn', href: '#', icon: <Linkedin size={20} /> },
-    { name: 'Instagram', href: '#', icon: <Instagram size={20} /> },
+    { name: 'LinkedIn', href: 'http://linkedin.com/in/madras-distance-education-85a769371', icon: <Linkedin size={20} /> },
+    { name: 'Instagram', href: 'https://www.instagram.com/madras_distance_education?utm_source=qr', icon: <Instagram size={20} /> },
+  ];
+
+  const courseSubLinks = [
+    { name: 'MBA', href: '#mba' },
+    { name: 'MCA', href: '#mca' },
+    { name: 'MSc', href: '#msc' },
+    { name: 'BCA', href: '#bca' },
+    { name: 'BCom', href: '#bcom' },
   ];
 
   return (
@@ -47,7 +55,7 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Quick Links with Dropdown */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -56,13 +64,29 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} className="relative group">
                   <a
                     href={link.href}
                     className="text-gray-300 hover:text-gold-500 transition-colors duration-200"
                   >
                     {link.name}
                   </a>
+
+                  {/* Dropdown under 'Courses' */}
+                  {link.name === 'Courses' && (
+                    <ul className="absolute left-0 top-full mt-2 w-40 bg-primary-900 border border-gray-700 rounded-md shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition duration-300 ease-in-out z-10">
+                      {courseSubLinks.map((course, subIndex) => (
+                        <li key={subIndex}>
+                          <a
+                            href={course.href}
+                            className="block px-4 py-2 text-gray-300 hover:bg-primary-800 hover:text-gold-500 transition"
+                          >
+                            {course.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
@@ -76,7 +100,7 @@ const Footer: React.FC = () => {
           >
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-2 text-gray-300">
-              <p>📞 +1 (555) 123-4567</p>
+              <p>📞 +91 9876543210</p>
               <p>✉️ info@edudistance.com</p>
               <p>📍 123 Education Street<br />Learning City, LC 12345</p>
             </div>

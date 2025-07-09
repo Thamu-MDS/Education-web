@@ -40,93 +40,50 @@ const MCAPage = () => {
     {
       semester: "Semester 1",
       courses: [
-        "Programming Fundamentals with C++",
-        "Data Structures and Algorithms",
-        "Computer Organization and Architecture",
-        "Discrete Mathematics",
-        "Technical Communication"
+        "C++ & Data Structures  ",
+        "Digital Logic Fundamentals  ",
+        "Database Management Systems ",
+        "Practical-I: DS using C++  Lab",
+        "Practical-II: RDBMS Lab",
+        "Accounting & Financial Management",
+        "Operating Systems"
       ]
     },
     {
       semester: "Semester 2",
       courses: [
-        "Object-Oriented Programming with Java",
-        "Database Management Systems",
-        "Computer Networks",
-        "Operating Systems",
-        "Software Engineering Principles"
+        "Design and Analysis od Algorithms",
+        "Object Oriented Analysis and Design ",
+        "Artificial Intelligence ",
+        "Practical-III: OOAD Lab ",
+        "Practical-IV: Web Based Application Development Lab.",
+        "Web Based Application Development  ",
+        "Computer Network "
       ]
     },
     {
       semester: "Semester 3",
       courses: [
-        "Web Development (HTML, CSS, JavaScript)",
-        "Python Programming",
-        "System Analysis and Design",
-        "Computer Graphics",
-        "Statistics for Data Science"
+        "Machine Learning  ",
+        "Practical-V:  Machine Learning Lab  ",
+        "Practical-VI:  Mini Project (Group Project)  ",
+        "Software Project Management ",
+        "Cloud Computing ",
+        "Mobile Application Development "
       ]
     },
     {
       semester: "Semester 4",
       courses: [
-        "Advanced Web Development (React, Node.js)",
-        "Mobile Application Development",
-        "Cloud Computing Fundamentals",
-        "Data Mining and Warehousing",
-        "Project Management"
+        "Project & Viva-Voce "
       ]
-    },
-    {
-      semester: "Semester 5",
-      courses: [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "DevOps and Deployment",
-        "Cybersecurity Fundamentals",
-        "Research Methodology"
-      ]
-    },
-    {
-      semester: "Semester 6",
-      courses: [
-        "Advanced AI and Deep Learning",
-        "Blockchain Technology",
-        "Industry Internship",
-        "Major Project",
-        "Seminar and Presentation"
-      ]
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Priya Sharma",
-      role: "Senior Software Engineer at Google",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The MCA program transformed my career completely. The comprehensive curriculum and practical approach prepared me for real-world challenges in tech.",
-      rating: 5
-    },
-    {
-      name: "Rahul Kumar",
-      role: "Full Stack Developer at Microsoft",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "Outstanding faculty and industry-relevant projects. The AI and ML modules were particularly impressive and helped me land my dream job.",
-      rating: 5
-    },
-    {
-      name: "Anjali Patel",
-      role: "Data Scientist at Amazon",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-      content: "The program's focus on emerging technologies like AI, ML, and cloud computing gave me a competitive edge in the job market.",
-      rating: 5
     }
   ];
 
   const stats = [
     { icon: Users, value: "2000+", label: "Students Enrolled" },
     { icon: Award, value: "95%", label: "Placement Rate" },
-    { icon: Clock, value: "3 Years", label: "Program Duration" },
+    { icon: Clock, value: "2 Years", label: "Program Duration" },
     { icon: Star, value: "4.9/5", label: "Student Rating" }
   ];
 
@@ -299,7 +256,7 @@ const MCAPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-white mb-4">
-              Comprehensive 3-Year Curriculum
+              Comprehensive 2-Year Curriculum
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               Our carefully structured curriculum progresses from fundamentals to advanced topics, 
@@ -333,63 +290,6 @@ const MCAPage = () => {
                     </motion.li>
                   ))}
                 </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Success Stories from Our Alumni
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our MCA graduates are working at top tech companies worldwide. 
-              Here's what they have to say about their journey with us.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>

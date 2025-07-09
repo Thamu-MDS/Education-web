@@ -20,7 +20,7 @@ const programIcons = {
 const programNames = {
   MBA: 'MBA',
   MCA: 'MCA',
-  'MSC_CYBER': 'MSC Cyber Security',
+  'MSC_CYBER': 'MSC Cyber Forensicn',
   'MSC_IT': 'MSC Information Technology',
   BCA: 'BCA',
   BCOM: 'BCOM',

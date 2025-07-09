@@ -37,7 +37,7 @@ const AboutPage = () => {
   ];
 
   const stats = [
-    { value: "25+", label: "Years of Excellence" },
+    { value: "10+", label: "Years of Excellence" },
     { value: "50,000+", label: "Alumni Network" },
     { value: "100+", label: "Expert Faculty" },
     { value: "95%", label: "Success Rate" }
@@ -101,7 +101,7 @@ const AboutPage = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="inline-block bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold"
                 >
-                  25+ Years of Excellence
+                  10+ Years of Excellence
                 </motion.span>
                 
                 <h1 className="text-5xl lg:text-6xl font-bold text-white">
