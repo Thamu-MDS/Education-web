@@ -14,6 +14,7 @@ import ContactPage from './Page/ContactPage';
 import Pricedata from './Page/Pricedata';
 import Lang from './Page/Lang';
 import Skill from './Page/Skill';
+import Msc from './Page/Courses/Msc';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function AnimatedRoutes() {
         <Route path="/mca" element={<MCAPage />} />
         <Route path="/mba" element={<MBAPage />} />
         <Route path="/bca" element={<BCAPage />} />
+        <Route path="/msc" element={<Msc />} />
         <Route path="/msc-it" element={<MScITPage />} />
         <Route path="/msc-cyber" element={<MScCyberPage />} />
         <Route path="/bcom" element={<BComPage />} />

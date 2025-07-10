@@ -8,10 +8,15 @@ const Header: React.FC = () => {
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const location = useLocation();
 
+  const handleNavigate = () => {
+    window.scrollTo(0, 0);
+    setIsMenuOpen(false);
+    setIsCoursesOpen(false);
+  }; 
+
   const courses = [
      { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
-    { name: 'MSc IT', path: '/msc-it', description: 'Master of Science in Information Technology' },
-    { name: 'MSc Cyber Forensics', path: '/msc-cyber', description: 'Master of Science in Cyber Forensics' },
+    { name: 'Msc', path: '/msc', description: 'Master of Science' },
     { name: 'MCA', path: '/mca', description: 'Master of Computer Applications' },
     { name: 'BCA', path: '/bca', description: 'Bachelor of Computer Applications' },
     { name: 'B.Com', path: '/bcom', description: 'Bachelor of Commerce' }
@@ -45,6 +50,7 @@ const Header: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={handleNavigate}
                 className={`relative px-4 py-2 font-medium transition-all duration-300 ${
                   isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
                 }`}
@@ -90,7 +96,8 @@ const Header: React.FC = () => {
                       >
                         <Link
                           to={course.path}
-                          onClick={() => setIsCoursesOpen(false)}
+                          onClick={handleNavigate}
+                         // onClick={() => setIsCoursesOpen(false)}
                           className="block px-6 py-4 hover:bg-slate-700/50 transition-all duration-300 group border-b border-slate-700/50 last:border-b-0"
                         >
                           <div className="flex items-center justify-between">
@@ -128,6 +135,7 @@ const Header: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
+                 onClick={handleNavigate}
                 className={`relative px-4 py-2 font-medium transition-all duration-300 ${
                   isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
                 }`}
@@ -146,6 +154,7 @@ const Header: React.FC = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/contact"
+                onClick={handleNavigate}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Apply Now
@@ -166,7 +175,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <AnimatePresence>
+        <AnimatePresence >
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}

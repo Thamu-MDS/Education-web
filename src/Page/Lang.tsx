@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Globe, Sparkles, BookOpen, ArrowRight, ChevronDown, ChevronUp, Users, Clock, Target, Award, GraduationCap } from 'lucide-react';
+import { Globe, Sparkles, BookOpen, ChevronDown, ChevronUp, Users, Clock, Target, Award } from 'lucide-react';
 
 const languages = [
   {

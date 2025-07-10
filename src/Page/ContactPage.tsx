@@ -11,6 +11,8 @@ const ContactPage = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -19,28 +21,61 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Network response was not ok');
+      }
+
+      const result = await response.json();
+      console.log('Form submission successful:', result);
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000);
+      
+      // Clear form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        course: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setError(error instanceof Error ? error.message : 'Failed to submit form. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Education Street", "Chennai, Tamil Nadu 600001", "India"]
+      details: ["5th floor Raheja towers, 177, Anna salai, Chennai, Tamilnadu - 600002"]
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 9876543210", "+91 9876543211", "Mon-Sat: 9AM-6PM"]
+      details: ["+91 9884886078", "+91 9884886078", "Mon-Sat: 9AM-6PM"]
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["admissions@mde.edu", "info@mde.edu", "support@mde.edu"]
+      details: ["info@hetacollege.com", "info@mde.edu", "info@hetacollege.com"]
     },
     {
       icon: Clock,
@@ -147,6 +182,18 @@ const ContactPage = () => {
                   Fill out the form below and we'll get back to you within 24 hours.
                 </p>
 
+                {error && (
+                  <div className="mb-6 p-4 bg-red-900/50 border border-red-700 rounded-lg text-red-300">
+                    {error}
+                  </div>
+                )}
+
+                {isSubmitted && (
+                  <div className="mb-6 p-4 bg-green-900/50 border border-green-700 rounded-lg text-green-300">
+                    Thank you! Your message has been sent successfully.
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -236,9 +283,18 @@ const ContactPage = () => {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center group"
+                    disabled={isLoading}
+                    className={`w-full ${isLoading ? 'bg-yellow-600' : 'bg-yellow-400 hover:bg-yellow-500'} text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center group`}
                   >
-                    {isSubmitted ? (
+                    {isLoading ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : isSubmitted ? (
                       <>
                         <CheckCircle className="mr-2 h-5 w-5" />
                         Message Sent!
@@ -282,18 +338,17 @@ const ContactPage = () => {
                 </motion.div>
               </div>
 
-
               {/* Quick Contact */}
               <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
                 <h3 className="text-2xl font-bold text-white mb-6">Quick Contact</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-yellow-400 mr-3" />
-                    <span className="text-slate-300">+91 9876543210</span>
+                    <span className="text-slate-300">+91 9884886078</span>
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-yellow-400 mr-3" />
-                    <span className="text-slate-300">admissions@mde.edu</span>
+                    <span className="text-slate-300">info@hetacollege.com</span>
                   </div>
                   <div className="flex items-start">
                     <Clock className="h-5 w-5 text-yellow-400 mr-3 mt-0.5" />

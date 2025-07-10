@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Server, Cloud, Database, Network, Shield, Cpu, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from 'lucide-react';
+import { Server, Cloud, Database, Network, Shield, Cpu, ArrowRight, CheckCircle, Users, Award, Clock, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MScITPage = () => {

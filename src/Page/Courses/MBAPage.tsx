@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, Globe, BarChart3, Target, Briefcase, ArrowRight, CheckCircle, Star, Award, Clock, Building } from 'lucide-react';
+import { TrendingUp, Users, Globe, BarChart3, Target, Briefcase, ArrowRight, CheckCircle, Award, Clock, Building } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MBAPage = () => {

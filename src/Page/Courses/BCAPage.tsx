@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Database, Globe, Smartphone, TowerControl as GameController2, Shield, ArrowRight, CheckCircle, Star, Users, Award, Clock, BookOpen } from 'lucide-react';
+import { Code2, Database, Globe, Smartphone, TowerControl as GameController2, Shield, ArrowRight, CheckCircle, Users, Award, Clock, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const BCAPage = () => {

@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, Calendar, ArrowRight, FileText, GraduationCap, Sparkles, Tag, TrendingDown } from 'lucide-react';
 import { Semester } from '../data/programData';
+import { Link } from 'react-router-dom';
+
+  const handleNavigate = () => {
+    window.scrollTo(0, 0);
+  };
 
 interface SemesterCardProps extends Semester {}
 
@@ -95,7 +100,7 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             className="relative"
           >
             <span className="text-gray-400 text-lg line-through relative">
-              ₹6,000
+              ₹27,700
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -137,7 +142,7 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             transition={{ delay: 0.4 }}
             className="text-sm text-green-400 font-medium mt-1"
           >
-            You save ₹3,500!
+            You save ₹15,200!
           </motion.div>
 
           {/* Limited Time */}
@@ -215,7 +220,7 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
               <Calendar className="text-[#0B1C39]" size={20} />
             </motion.div>
             <h3 className="text-2xl font-bold text-[#FFD700]">
-              Semester {semester}
+            {semester}
             </h3>
           </motion.div>
 
@@ -305,12 +310,15 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             whileTap={{ scale: 0.98 }}
             className="w-full bg-[#FFD700] text-[#0B1C39] py-3 rounded-lg font-bold flex items-center justify-center space-x-2 hover:bg-yellow-400 transition-all duration-300 relative overflow-hidden"
           >
+            <Link to="/msc-it"
+            onClick={handleNavigate}>
             <motion.span
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
               Enroll Now
             </motion.span>
+            </Link>
             <motion.div
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, delay: 0.1 }}
@@ -376,7 +384,7 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             <Calendar className="text-[#0B1C39]" size={20} />
           </motion.div>
           <h3 className="text-2xl font-bold text-[#FFD700]">
-            Semester {semester}
+            {semester}
           </h3>
         </motion.div>
 
@@ -410,6 +418,8 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
         </motion.div>
 
         {/* Enroll Button */}
+        <Link to="/contact"
+            onClick={handleNavigate}>
         <motion.button
           whileHover={{ 
             scale: 1.02,
@@ -432,6 +442,7 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             <ArrowRight size={18} />
           </motion.div>
         </motion.button>
+        </Link>
       </div>
     </motion.div>
   );

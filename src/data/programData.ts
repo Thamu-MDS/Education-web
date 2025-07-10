@@ -38,7 +38,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Comprehensive MBA program designed to build your business acumen step by step",
     semesters: [
       {
-        semester: 1,
+        semester: "Semester 1",
         subjects: [
           "Management principles and Business Ethics ",
           "Quantitative and ResearchMethods in Business",
@@ -46,10 +46,10 @@ export const ProgramData: Record<string, Program> = {
           "Accounting for Managers",
           "Managerial Economics"
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 2,
+        semester: "Semester 2",
         subjects: [
           "Legal Systems in Business",
           "Applied Operations Research",
@@ -57,10 +57,10 @@ export const ProgramData: Record<string, Program> = {
           "InternationalBusiness",
           "Management Information System"
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 3,
+        semester: "Semester 3",
         subjects: [
           "Human Resource Management",
           "Marketing Management",
@@ -68,34 +68,31 @@ export const ProgramData: Record<string, Program> = {
           "Financial Management",
           "Innovation and Entrepreneurship"
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 4,
-        subjects: [],
-        price: "",
-        hasChoice: true,
-        choices: {
-          project: {
-            subjects: [
-              "Major Project Work",
-              "Project Presentation",
-              "Viva Voce"
-            ],
-            price: "₹2,500"
-          },
-          subjects: {
-            subjects: [
-              "Entrepreneurship Development",
-              "Business Analytics",
-              "Corporate Governance",
-              "Industry Project",
-              "Management Seminar"
-            ],
-            price: "₹2,500"
-          }
-        }
+        semester: "Semester 4",
+        subjects: [
+          "Entrepreneurship Development",
+          "Business Analytics",
+          "Corporate Governance",
+          "Industry Project",
+          "Management Seminar"
+        ],
+        price: "₹12,500"
+      },
+      {
+        semester: "Project",
+        subjects: [
+          "Entrepreneurship Development",
+          "Business Analytics",
+          "Corporate Governance",
+          "Industry Project",
+          "Management Seminar"
+        ],
+        price: "₹12,500"
       }
+
     ],
     electives: [
       {
@@ -173,7 +170,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Comprehensive MCA program designed to master advanced computing and software development",
     semesters: [
       {
-        semester: 1,
+        semester: "Semester 1",
         subjects: [
           "C++ & Data Structures  ",
           "Digital Logic Fundamentals  ",
@@ -183,10 +180,10 @@ export const ProgramData: Record<string, Program> = {
           "Accounting & Financial Management",
           "Operating Systems"
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 2,
+        semester: "Semester 2",
         subjects: [
           "Design and Analysis od Algorithms",
           "Object Oriented Analysis and Design ",
@@ -196,10 +193,10 @@ export const ProgramData: Record<string, Program> = {
           "Web Based Application Development  ",
           "Computer Network "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 3,
+        semester: "Semester 3",
         subjects: [
           "Machine Learning  ",
           "Practical-V:  Machine Learning Lab  ",
@@ -208,33 +205,21 @@ export const ProgramData: Record<string, Program> = {
           "Cloud Computing ",
           "Mobile Application Development "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
+      },
+        {
+        semester: "Semester 4",
+        subjects: [
+           "Project & Viva-Voce "
+        ],
+        price: "₹12,500"
       },
       {
-        semester: 4,
-        subjects: [],
-        price: "",
-        hasChoice: true,
-        choices: {
-          project: {
-            subjects: [
-              "Major Project Development",
-              "Project Documentation and Testing",
-              "Project Presentation and Viva"
-            ],
-            price: "₹2,500"
-          },
-          subjects: {
-            subjects: [
-              "Advanced Database Systems",
-              "Distributed Systems",
-              "Software Architecture",
-              "DevOps and Automation",
-              "Emerging Technologies"
-            ],
-            price: "₹2,500"
-          }
-        }
+       semester: "Project",
+        subjects: [
+           "Project & Viva-Voce "
+        ],
+        price: "₹12,500"
       }
     ],
     electives: [
@@ -291,7 +276,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Comprehensive cybersecurity program to build expertise in digital security and threat management",
     semesters: [
       {
-        semester: 1,
+        semester:  "Semester 1",
         subjects: [
           "Introduction to Cyber Criminology  ",
           "Networking and Communication Protocols ",
@@ -299,10 +284,10 @@ export const ProgramData: Record<string, Program> = {
           "IT Infrastructure and Cloud Computing",
           "Forms of Cyber Crimes "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 2,
+        semester:  "Semester 2",
         subjects: [
           "Network Security and Cryptography ",
           "Basics of Cyber Forensics ",
@@ -310,10 +295,10 @@ export const ProgramData: Record<string, Program> = {
           "Practical- I  –  (Networking and Information Security)  ",
           "BFSI Frauds & Countermeasures "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 3,
+        semester:  "Semester 3",
         subjects: [
           "Database Management Security ",
           "Advanced Cyber Forensics ",
@@ -321,23 +306,11 @@ export const ProgramData: Record<string, Program> = {
           "Practical – II (Cyber Forensics)",
           "Data Privacy"
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 4,
-        subjects: [],
-        price: "",
-        hasChoice: true,
-        choices: {
-          project: {
-            subjects: [
-              "Cybersecurity Research Project",
-              "Security Implementation Project",
-              "Project Defense"
-            ],
-            price: "₹2,500"
-          },
-          subjects: {
+        semester:  "Semester 4",
+      
             subjects: [
               "Application Security ",
               "Governance, Risk  &Compliance ",
@@ -345,9 +318,18 @@ export const ProgramData: Record<string, Program> = {
               "Security Testing ",
               "Cyber Laws &  Intellectual Property Rights "
             ],
-            price: "₹2,500"
-          }
-        }
+            price: "₹12,500"
+      },
+      {
+       semester: "Project",
+        subjects: [
+           "Application Security ",
+              "Governance, Risk  &Compliance ",
+              "Business Continuity & Disaster Recovery Management ",
+              "Security Testing ",
+              "Cyber Laws &  Intellectual Property Rights "
+        ],
+        price: "₹12,500"
       }
     ],
     electives: [
@@ -393,7 +375,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Advanced IT program designed to master modern technology and software development",
     semesters: [
       {
-        semester: 1,
+        semester: "Semester 1",
         subjects: [
           "C++ and Data Structures ",
           "Computer Architecture ",
@@ -402,10 +384,10 @@ export const ProgramData: Record<string, Program> = {
           "Practical – II: RDBMS Lab. ",
           "Visual Programming"
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 2,
+        semester: "Semester 2",
         subjects: [
           "Operating Systems",
           "Programming in Java ",
@@ -414,10 +396,10 @@ export const ProgramData: Record<string, Program> = {
           "Dot Net Programming",
           "Practical – IV: Dot Net Programming Lab. "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 3,
+        semester: "Semester 3",
         subjects: [
           "Computer Networks",
           "Design and Analysis of Algorithms ",
@@ -427,23 +409,10 @@ export const ProgramData: Record<string, Program> = {
           "Practical – VI: Mini Project ",
           "Mobile Computing "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 4,
-        subjects: [],
-        price: "",
-        hasChoice: true,
-        choices: {
-          project: {
-            subjects: [
-              "Major IT Project",
-              "System Implementation",
-              "Project Presentation"
-            ],
-            price: "₹2,500"
-          },
-          subjects: {
+        semester: "Semester 4",
             subjects: [
               "Project Management in IT",
               "IT Security and Audit",
@@ -451,9 +420,19 @@ export const ProgramData: Record<string, Program> = {
               "DevOps and Automation",
               "Research Methodology"
             ],
-            price: "₹2,500"
-          }
-        }
+            price: "₹12,500"
+      }
+      ,
+      {
+       semester: "Project",
+        subjects: [
+           "Project Management in IT",
+              "IT Security and Audit",
+              "Emerging Technologies",
+              "DevOps and Automation",
+              "Research Methodology"
+        ],
+        price: "₹12,500"
       }
     ],
     electives: [
@@ -499,7 +478,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Comprehensive computer applications program building strong programming and technical foundations",
     semesters: [
       {
-        semester: 1,
+        semester: "Semester 1",
         subjects: [
           "Tamil or other language ",
           "English",
@@ -507,10 +486,10 @@ export const ProgramData: Record<string, Program> = {
           "Practical – I :  PC Software Lab",
           "Mathematics – I  "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 2,
+        semester:  "Semester 2",
         subjects: [
           "Tamil or other language",
           "English ",
@@ -518,10 +497,10 @@ export const ProgramData: Record<string, Program> = {
           "Practical – II :   Programming in C Lab ",
           "Mathematics – II "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 3,
+        semester:  "Semester 3",
         subjects: [
           "Programming in C++ and Data Structures ",
           "Microprocessors and its Applications",
@@ -529,10 +508,10 @@ export const ProgramData: Record<string, Program> = {
           "Practical-III : Programming  in C++ using Data structures   ",
           "Financial Accounting "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 4,
+        semester:  "Semester 4",
         subjects: [
           "Programming in Java",
           "Operating System",
@@ -540,10 +519,10 @@ export const ProgramData: Record<string, Program> = {
           "Practical-IV :  Java Programming Lab",
           "Cost and Management Accounting "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 5,
+        semester:  "Semester 5",
         subjects: [
           "Database Management System   ",
           "Software Engineering",
@@ -552,10 +531,10 @@ export const ProgramData: Record<string, Program> = {
           "Visual Programming ",
           "Environmental Studies"
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 6,
+        semester:  "Semester 6",
         subjects: [],
         price: "",
         hasChoice: true,
@@ -566,7 +545,7 @@ export const ProgramData: Record<string, Program> = {
               "Project Documentation",
               "Project Viva"
             ],
-            price: "₹2,500"
+            price: "₹12,500"
           },
           subjects: {
             subjects: [
@@ -577,7 +556,7 @@ export const ProgramData: Record<string, Program> = {
               "Multimedia Systems",
               "Value Education "
             ],
-            price: "₹2,500"
+            price: "₹12,500"
           }
         }
       }
@@ -590,7 +569,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Complete commerce education building expertise in business, finance, and accounting",
     semesters: [
       {
-        semester: 1,
+        semester:  "Semester 1",
         subjects: [
           "Tamil or other language ",
           "English",
@@ -598,10 +577,10 @@ export const ProgramData: Record<string, Program> = {
           "Business Communication ",
           "Business Economics "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 2,
+        semester:  "Semester 2",
         subjects: [
           "Tamil or other language",
           "English ",
@@ -609,10 +588,10 @@ export const ProgramData: Record<string, Program> = {
           "Principles of Management  ",
           "Indian Economy "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 3,
+        semester:  "Semester 3",
         subjects: [
           "Corporate Accounting -I ",
           "Business Laws ",
@@ -620,10 +599,10 @@ export const ProgramData: Record<string, Program> = {
           "Business Statistics & Operation Research - I ",
           "Indian Constitution "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 4,
+        semester:  "Semester 4",
         subjects: [
           "Corporate Accounting – II",
           "Company Law ",
@@ -631,10 +610,10 @@ export const ProgramData: Record<string, Program> = {
           "Business Statistics & Operation Research - II ",
           "Basics of Psychology  "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 5,
+        semester:  "Semester 5",
         subjects: [
           "Cost Accounting  ",
           "Practical Auditing",
@@ -642,10 +621,10 @@ export const ProgramData: Record<string, Program> = {
           "Marketing Management",
           "Environmental Studies "
         ],
-        price: "₹2,500"
+        price: "₹12,500"
       },
       {
-        semester: 6,
+        semester:  "Semester 6",
         subjects: [],
         price: "",
         hasChoice: true,
@@ -656,7 +635,7 @@ export const ProgramData: Record<string, Program> = {
               "Business Case Study",
               "Project Presentation"
             ],
-            price: "₹2,500"
+            price: "₹12,500"
           },
           subjects: {
             subjects: [
@@ -666,7 +645,7 @@ export const ProgramData: Record<string, Program> = {
               "Portfolio Management   ",
               "Value Education"
             ],
-            price: "₹2,500"
+            price: "₹12,500"
           }
         }
       }
