@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { Server, Cloud, Database, Network, Shield, Cpu, ArrowRight, CheckCircle, Users, Award, Clock, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+ const handleNavigate = () => {
+    window.scrollTo(0, 0);
+  }; 
 const MScITPage = () => {
   const features = [
     {
@@ -134,12 +137,7 @@ const MScITPage = () => {
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
-                
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <button className="bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300">
-                    Download Brochure
-                  </button>
-                </motion.div>
+              
               </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8 border-t border-slate-700">
@@ -315,6 +313,7 @@ const MScITPage = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/contact"
+                  onClick={handleNavigate}
                   className="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center group shadow-lg"
                 >
                   Apply Now

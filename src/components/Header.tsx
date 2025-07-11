@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -7,15 +7,21 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleNavigate = () => {
+  // ✅ Scroll to top on route change (fixes mobile issue)
+  useEffect(() => {
     window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  const handleNavigate = (path: string) => {
     setIsMenuOpen(false);
     setIsCoursesOpen(false);
-  }; 
+    navigate(path);
+  };
 
   const courses = [
-     { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
+    { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
     { name: 'Msc', path: '/msc', description: 'Master of Science' },
     { name: 'MCA', path: '/mca', description: 'Master of Computer Applications' },
     { name: 'BCA', path: '/bca', description: 'Bachelor of Computer Applications' },
@@ -34,7 +40,7 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 rounded-full group">
+          <Link to="/" onClick={() => handleNavigate('/')} className="flex items-center space-x-3 rounded-full group">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="relative">
               <img
                 src="/Images/logo.jpg"
@@ -47,10 +53,9 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }].map(link => (
-              <Link
+              <button
                 key={link.path}
-                to={link.path}
-                onClick={handleNavigate}
+                onClick={() => handleNavigate(link.path)}
                 className={`relative px-4 py-2 font-medium transition-all duration-300 ${
                   isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
                 }`}
@@ -62,7 +67,7 @@ const Header: React.FC = () => {
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
                   />
                 )}
-              </Link>
+              </button>
             ))}
 
             {/* Courses Dropdown */}
@@ -94,11 +99,9 @@ const Header: React.FC = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
                       >
-                        <Link
-                          to={course.path}
-                          onClick={handleNavigate}
-                         // onClick={() => setIsCoursesOpen(false)}
-                          className="block px-6 py-4 hover:bg-slate-700/50 transition-all duration-300 group border-b border-slate-700/50 last:border-b-0"
+                        <button
+                          onClick={() => handleNavigate(course.path)}
+                          className="w-full text-left block px-6 py-4 hover:bg-slate-700/50 transition-all duration-300 group border-b border-slate-700/50 last:border-b-0"
                         >
                           <div className="flex items-center justify-between">
                             <div>
@@ -117,7 +120,7 @@ const Header: React.FC = () => {
                               →
                             </motion.div>
                           </div>
-                        </Link>
+                        </button>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -125,17 +128,10 @@ const Header: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {/* New Pages */}
-            {[
-              { name: 'Skills', path: '/skills' },
-              { name: 'Languages', path: '/languages' },
-              { name: 'Price', path: '/price' },
-              { name: 'Contact', path: '/contact' }
-            ].map(link => (
-              <Link
+            {[{ name: 'Skills', path: '/skills' }, { name: 'Languages', path: '/languages' }, { name: 'Price', path: '/price' }, { name: 'Contact', path: '/contact' }].map(link => (
+              <button
                 key={link.path}
-                to={link.path}
-                 onClick={handleNavigate}
+                onClick={() => handleNavigate(link.path)}
                 className={`relative px-4 py-2 font-medium transition-all duration-300 ${
                   isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
                 }`}
@@ -147,18 +143,16 @@ const Header: React.FC = () => {
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
                   />
                 )}
-              </Link>
+              </button>
             ))}
 
-            {/* Apply Button */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                to="/contact"
-                onClick={handleNavigate}
+              <button
+                onClick={() => handleNavigate('/contact')}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Apply Now
-              </Link>
+              </button>
             </motion.div>
           </nav>
 
@@ -175,7 +169,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <AnimatePresence >
+        <AnimatePresence>
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
@@ -185,41 +179,37 @@ const Header: React.FC = () => {
               className="lg:hidden bg-slate-800/95 backdrop-blur-md border-t border-slate-700 rounded-b-xl overflow-hidden"
             >
               <div className="px-4 py-6 space-y-4 max-h-96 overflow-y-auto">
-                <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
+                <button onClick={() => handleNavigate('/')} className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
                   Home
-                </Link>
-                <Link to="/about" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/about') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
+                </button>
+                <button onClick={() => handleNavigate('/about')} className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/about') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
                   About
-                </Link>
+                </button>
 
                 <div className="space-y-2">
-                  <div className="text-yellow-400 font-semibold px-4 py-2 text-sm uppercase tracking-wider">
-                    Courses
-                  </div>
+                  <div className="text-yellow-400 font-semibold px-4 py-2 text-sm uppercase tracking-wider">Courses</div>
                   {courses.map(course => (
-                    <Link
+                    <button
                       key={course.path}
-                      to={course.path}
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ml-4 ${isActive(course.path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
+                      onClick={() => handleNavigate(course.path)}
+                      className={`block w-full text-left px-6 py-3 rounded-lg font-medium transition-all duration-300 ${isActive(course.path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
                     >
                       <div>
                         <div className="font-semibold">{course.name}</div>
                         <div className="text-xs opacity-75 mt-1">{course.description}</div>
                       </div>
-                    </Link>
+                    </button>
                   ))}
                 </div>
 
                 {['/skills', '/languages', '/price', '/contact'].map(path => (
-                  <Link
+                  <button
                     key={path}
-                    to={path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive(path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
+                    onClick={() => handleNavigate(path)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive(path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
                   >
                     {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
-                  </Link>
+                  </button>
                 ))}
               </div>
             </motion.div>

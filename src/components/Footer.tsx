@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Phone,
+  Mail,
+  MapPin,
+} from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
@@ -11,10 +22,22 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', href: 'https://www.facebook.com/share/16hXrA32wt/', icon: <Facebook size={20} /> },
+    {
+      name: 'Facebook',
+      href: 'https://www.facebook.com/share/16hXrA32wt/',
+      icon: <Facebook size={20} />,
+    },
     { name: 'Twitter', href: '#', icon: <Twitter size={20} /> },
-    { name: 'LinkedIn', href: 'http://linkedin.com/in/madras-distance-education-85a769371', icon: <Linkedin size={20} /> },
-    { name: 'Instagram', href: 'https://www.instagram.com/madras_distance_education?utm_source=qr', icon: <Instagram size={20} /> },
+    {
+      name: 'LinkedIn',
+      href: 'http://linkedin.com/in/madras-distance-education-85a769371',
+      icon: <Linkedin size={20} />,
+    },
+    {
+      name: 'Instagram',
+      href: 'https://www.instagram.com/madras_distance_education?utm_source=qr',
+      icon: <Instagram size={20} />,
+    },
   ];
 
   const courseSubLinks = [
@@ -24,6 +47,17 @@ const Footer: React.FC = () => {
     { name: 'BCA', href: '#bca' },
     { name: 'BCom', href: '#bcom' },
   ];
+
+  const handleSubscribe = () => {
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setMessage('Please enter a valid email address.');
+      return;
+    }
+
+    console.log('Subscribing with email:', email);
+    setMessage('Thank you for subscribing!');
+    setEmail('');
+  };
 
   return (
     <footer className="bg-primary-950 text-white py-16">
@@ -48,6 +82,8 @@ const Footer: React.FC = () => {
                   whileHover={{ scale: 1.2 }}
                   className="text-white hover:text-gold-500 transition-colors duration-200"
                   title={social.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {social.icon}
                 </motion.a>
@@ -71,8 +107,6 @@ const Footer: React.FC = () => {
                   >
                     {link.name}
                   </a>
-
-                  {/* Dropdown under 'Courses' */}
                   {link.name === 'Courses' && (
                     <ul className="absolute left-0 top-full mt-2 w-40 bg-primary-900 border border-gray-700 rounded-md shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition duration-300 ease-in-out z-10">
                       {courseSubLinks.map((course, subIndex) => (
@@ -92,17 +126,48 @@ const Footer: React.FC = () => {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info with Interactive Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-2 text-gray-300">
-              <p>📞 +91 9876543210</p>
-              <p>✉️ info@edudistance.com</p>
-              <p>📍 123 Education Street<br />Learning City, LC 12345</p>
+            <div className="space-y-4 text-gray-300">
+              {/* Phone */}
+              <motion.a
+                href="tel:+919876543210"
+                className="flex items-start space-x-3 hover:text-gold-500 transition"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Phone className="text-gold-500 mt-1" size={18} />
+                <span>+91 9876543210</span>
+              </motion.a>
+
+              {/* Email */}
+              <motion.a
+                href="mailto:info@edudistance.com"
+                className="flex items-start space-x-3 hover:text-gold-500 transition"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Mail className="text-gold-500 mt-1" size={18} />
+                <span>info@edudistance.com</span>
+              </motion.a>
+
+              {/* Address with Google Maps Link */}
+              <motion.a
+                href="https://www.google.com/maps/search/?api=1&query=123+Education+Street+Learning+City+LC+12345"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-3 hover:text-gold-500 transition"
+                whileHover={{ scale: 1.05 }}
+              >
+                <MapPin className="text-gold-500 mt-1" size={18} />
+                <span>
+                  123 Education Street<br />
+                  Learning City, LC 12345
+                </span>
+              </motion.a>
             </div>
           </motion.div>
 
@@ -120,12 +185,20 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 px-4 py-2 rounded-l-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-gold-500"
               />
-              <button className="bg-gold-500 text-primary-950 px-4 py-2 rounded-r-lg font-semibold hover:bg-gold-400 transition-colors duration-200">
+              <button
+                onClick={handleSubscribe}
+                className="bg-gold-500 text-primary-950 px-4 py-2 rounded-r-lg font-semibold hover:bg-gold-400 transition-colors duration-200"
+              >
                 Subscribe
               </button>
             </div>
+            {message && (
+              <p className="mt-2 text-sm text-gold-400">{message}</p>
+            )}
           </motion.div>
         </div>
 

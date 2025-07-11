@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import {
-    BookOpen,
+    // BookOpen,
     Award,
     Users,
     Briefcase,
@@ -68,7 +68,7 @@ function Msc() {
 
    
     return (
-        <div className="min-h-screen bg-[#0a1f44] text-white overflow-x-hidden">
+        <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
             {/* New Hero Section */}
             <section className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -103,17 +103,12 @@ function Msc() {
                                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                     <Link
                                         to="/contact"
+                                        onClick={handleNavigate}
                                         className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center group shadow-lg"
                                     >
                                         Apply Now
                                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                     </Link>
-                                </motion.div>
-
-                                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                    <button className="bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300">
-                                        Download Brochure
-                                    </button>
                                 </motion.div>
                             </div>
 
@@ -173,7 +168,7 @@ function Msc() {
 
             {/* Programs Grid Section */}
             <motion.section
-                className="py-24 px-4 bg-gradient-to-b from-[#0a1f44] via-[#1a365d] to-[#2a4a6b]"
+                className="py-24 px-4 bg-slate-900"
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
@@ -198,14 +193,14 @@ function Msc() {
                         </p>
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-3 gap-10">
+                    <div className="grid lg:grid-cols-2 gap-10">
                         {/* Computer Science Program */}
-                        <motion.div
+                        {/* <motion.div
                             variants={fadeInUp}
                             whileHover={{ y: -15, scale: 1.03, rotateY: 5 }}
                             className="bg-gradient-to-br from-yellow-400/15 to-yellow-600/5 backdrop-blur-sm p-10 rounded-2xl border-2 border-yellow-400/50 hover:border-yellow-400 transition-all duration-500 relative overflow-hidden group"
                         >
-                            {/* Animated Background Elements */}
+                         
                             <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -249,7 +244,7 @@ function Msc() {
                                 </Link>
 
                             </div>
-                        </motion.div>
+                        </motion.div> */}
 
                         {/* Cyber Forensics Program */}
                         <motion.div
@@ -275,7 +270,7 @@ function Msc() {
                             </motion.div>
 
                             <h3 className="text-3xl font-bold mb-6 text-white group-hover:text-yellow-500 transition-colors duration-300">
-                                MSc Cyber <br /> Forensics
+                                MSc Cyber   Forensics
                             </h3>
 
                             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
