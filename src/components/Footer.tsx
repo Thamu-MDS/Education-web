@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   Facebook,
   Twitter,
@@ -23,6 +24,14 @@ const Footer: React.FC = () => {
     { name: 'Contact', href: '/contact' },
   ];
 
+  const courseSubLinks = [
+    { name: 'MBA', href: '/mba' },
+    { name: 'MCA', href: '/mca' },
+    { name: 'MSc', href: '/msc' },
+    { name: 'BCA', href: '/bca' },
+    { name: 'BCom', href: '/bcom' },
+  ];
+
   const socialLinks = [
     {
       name: 'Facebook',
@@ -42,14 +51,6 @@ const Footer: React.FC = () => {
     },
   ];
 
-  const courseSubLinks = [
-    { name: 'MBA', href: '/mba' },
-    { name: 'MCA', href: '/mca' },
-    { name: 'MSc', href: '/msc' },
-    { name: 'BCA', href: '/bca' },
-    { name: 'BCom', href: '/bcom' },
-  ];
-
   const handleSubscribe = () => {
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       setMessage('Please enter a valid email address.');
@@ -62,7 +63,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-primary-950 text-white py-16">
+    <footer className="bg-primary-950 text-white py-16 relative z-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -93,52 +94,52 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links with Click Dropdown and Arrow */}
+          {/* Quick Links with Courses Dropdown */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative"
           >
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} className={link.name === 'Courses' ? 'relative' : ''}>
                   {link.name === 'Courses' ? (
                     <>
                       <button
-                        onClick={() => setShowCourses(prev => !prev)}
+                        onClick={() => setShowCourses((prev) => !prev)}
                         className="flex items-center space-x-2 text-gray-300 hover:text-gold-500 transition-colors duration-200 focus:outline-none"
                       >
                         <span>Courses</span>
                         <ChevronDown
                           size={18}
-                          className={`transition-transform duration-300 ${showCourses ? 'rotate-180' : ''
-                            }`}
+                          className={`transition-transform duration-300 ${showCourses ? 'rotate-180' : ''}`}
                         />
                       </button>
-
                       {showCourses && (
-                        <ul className="mt-2 ml-4 space-y-1 bg-primary-900 border border-gray-700 rounded-md shadow-lg p-2 w-fit z-10">
+                        <ul className="absolute left-0 top-full mt-2 w-40 bg-primary-900 border border-gray-700 rounded-md shadow-lg z-10">
                           {courseSubLinks.map((course, subIndex) => (
                             <li key={subIndex}>
-                              <a
-                                href={course.href}
-                                className="block px-2 py-1 text-gray-300 hover:bg-primary-800 hover:text-gold-500 transition"
+                              <Link
+                                to={course.href}
+                                onClick={() => setShowCourses(false)} // close menu on click
+                                className="block px-4 py-2 text-gray-300 hover:bg-primary-800 hover:text-gold-500 transition"
                               >
                                 {course.name}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
                       )}
                     </>
                   ) : (
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-300 hover:text-gold-500 transition-colors duration-200"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   )}
                 </li>
               ))}
