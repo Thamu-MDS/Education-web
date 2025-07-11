@@ -1,12 +1,13 @@
+// SemesterCard.tsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, Calendar, ArrowRight, FileText, GraduationCap, Sparkles, Tag, TrendingDown } from 'lucide-react';
 import { Semester } from '../data/programData';
 import { Link } from 'react-router-dom';
 
-  const handleNavigate = () => {
-    window.scrollTo(0, 0);
-  };
+const handleNavigate = () => {
+  window.scrollTo(0, 0);
+};
 
 interface SemesterCardProps extends Semester {}
 
@@ -14,14 +15,12 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
   const [selectedChoice, setSelectedChoice] = useState<'project' | 'subjects'>('project');
   const [isHovered, setIsHovered] = useState(false);
 
-  // Animated pricing component
   const AnimatedPricing = ({ currentPrice }: { currentPrice: string }) => (
     <motion.div 
       className="relative mb-4"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      {/* Special Offer Badge */}
       <motion.div
         initial={{ scale: 0, rotate: -45 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -39,7 +38,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
         </div>
       </motion.div>
 
-      {/* Pricing Container */}
       <motion.div
         className="bg-gradient-to-br from-[#FFD700]/20 to-[#e6c200]/10 rounded-xl p-4 border-2 border-[#FFD700]/30 relative overflow-hidden"
         whileHover={{ 
@@ -48,7 +46,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
           boxShadow: "0 0 20px rgba(255, 215, 0, 0.4)"
         }}
       >
-        {/* Animated Background Sparkles */}
         <AnimatePresence>
           {isHovered && (
             <>
@@ -75,7 +72,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
           )}
         </AnimatePresence>
 
-        {/* Special Offer Header */}
         <motion.div 
           className="flex items-center justify-center mb-3"
           animate={{ 
@@ -90,9 +86,7 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
           </div>
         </motion.div>
 
-        {/* Price Display */}
         <div className="text-center">
-          {/* Original Price */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,7 +104,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             </span>
           </motion.div>
 
-          {/* New Price */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -135,7 +128,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             </motion.div>
           </motion.div>
 
-          {/* Savings Display */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -145,7 +137,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             You save ₹15,200!
           </motion.div>
 
-          {/* Limited Time */}
           <motion.div
             animate={{ 
               opacity: [0.7, 1, 0.7],
@@ -185,7 +176,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
         }}
         className="bg-gradient-to-br from-[#1a2952] to-[#0B1C39] rounded-2xl p-6 border-t-4 border-[#FFD700] shadow-lg hover:shadow-[#FFD700]/20 transition-all duration-500 h-full relative overflow-hidden"
       >
-        {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <motion.div
             animate={{ 
@@ -205,7 +195,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
         </div>
 
         <div className="relative z-10">
-          {/* Header */}
           <motion.div 
             className="flex items-center mb-4"
             initial={{ opacity: 0, x: -20 }}
@@ -224,10 +213,8 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             </h3>
           </motion.div>
 
-          {/* Special Offer Pricing */}
           <AnimatedPricing currentPrice={currentChoice.price} />
 
-          {/* Choice Toggle */}
           <motion.div 
             className="mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -265,7 +252,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             </div>
           </motion.div>
 
-          {/* Subjects List */}
           <motion.div 
             className="mb-6"
             initial={{ opacity: 0 }}
@@ -300,7 +286,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
             </ul>
           </motion.div>
 
-          {/* Enroll Button */}
           <motion.button
             whileHover={{ 
               scale: 1.02,
@@ -331,7 +316,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
     );
   }
 
-  // Regular semester card (no choice)
   return (
     <motion.div
       initial={{ opacity: 0, y: 50, rotateX: -15 }}
@@ -349,7 +333,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
       }}
       className="bg-gradient-to-br from-[#1a2952] to-[#0B1C39] rounded-2xl p-6 border-t-4 border-[#FFD700] shadow-lg hover:shadow-[#FFD700]/20 transition-all duration-500 h-full relative overflow-hidden"
     >
-      {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <motion.div
           animate={{ 
@@ -369,7 +352,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
       </div>
 
       <div className="relative z-10">
-        {/* Header */}
         <motion.div 
           className="flex items-center mb-4"
           initial={{ opacity: 0, x: -20 }}
@@ -388,10 +370,8 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
           </h3>
         </motion.div>
 
-        {/* Special Offer Pricing */}
         <AnimatedPricing currentPrice={price} />
 
-        {/* Subjects */}
         <motion.div 
           className="mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -417,7 +397,6 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
           </ul>
         </motion.div>
 
-        {/* Enroll Button */}
         <Link to="/contact"
             onClick={handleNavigate}>
         <motion.button

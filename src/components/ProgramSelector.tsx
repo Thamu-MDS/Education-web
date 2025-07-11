@@ -1,6 +1,7 @@
+// ProgramSelector.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Shield, Monitor, Code, Calculator, Laptop } from 'lucide-react';
+import { GraduationCap, Shield, Monitor, Code, Calculator, Laptop, Brain, HeartPulse } from 'lucide-react';
 import { ProgramData } from '../data/programData';
 
 interface ProgramSelectorProps {
@@ -13,6 +14,8 @@ const programIcons = {
   MCA: Laptop,
   'MSC_CYBER': Shield,
   'MSC_IT': Monitor,
+  'MSC_PSYCH': Brain,
+  'MSC_COUNSELING': HeartPulse,
   BCA: Code,
   BCOM: Calculator,
 };
@@ -20,8 +23,10 @@ const programIcons = {
 const programNames = {
   MBA: 'MBA',
   MCA: 'MCA',
-  'MSC_CYBER': 'MSC Cyber Forensicn',
+  'MSC_CYBER': 'MSC Cyber Forensic',
   'MSC_IT': 'MSC Information Technology',
+  'MSC_PSYCH': 'MSC Psychology',
+  'MSC_COUNSELING': 'MSC Counseling Psychology',
   BCA: 'BCA',
   BCOM: 'BCOM',
 };

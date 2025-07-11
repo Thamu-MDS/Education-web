@@ -1,3 +1,4 @@
+// programData.ts
 export interface Semester {
   semester: number | string;
   subjects: string[];
@@ -92,7 +93,6 @@ export const ProgramData: Record<string, Program> = {
         ],
         price: "₹12,500"
       }
-
     ],
     electives: [
       {
@@ -270,7 +270,7 @@ export const ProgramData: Record<string, Program> = {
     ]
   },
   MSC_CYBER: {
-    title: "Master of Science in Cyber Forensicn",
+    title: "Master of Science in Cyber Forensic",
     description: "Advanced cybersecurity program focusing on protecting digital assets, ethical hacking, forensics, and security management in the modern digital landscape.",
     semesterTitle: "Semester-wise Cyber Security Curriculum",
     semesterDescription: "Comprehensive cybersecurity program to build expertise in digital security and threat management",
@@ -310,7 +310,6 @@ export const ProgramData: Record<string, Program> = {
       },
       {
         semester:  "Semester 4",
-      
             subjects: [
               "Application Security ",
               "Governance, Risk  &Compliance ",
@@ -421,8 +420,7 @@ export const ProgramData: Record<string, Program> = {
               "Research Methodology"
             ],
             price: "₹12,500"
-      }
-      ,
+      },
       {
        semester: "Project",
         subjects: [
@@ -468,6 +466,222 @@ export const ProgramData: Record<string, Program> = {
           "Network Troubleshooting"
         ],
         icon: "🌐"
+      }
+    ]
+  },
+  MSC_PSYCH: {
+    title: "Master of Science in Psychology",
+    description: "Comprehensive psychology program covering cognitive, behavioral, clinical, and organizational psychology to understand human behavior and mental processes.",
+    semesterTitle: "Semester-wise Psychology Curriculum",
+    semesterDescription: "Advanced psychology program designed to master human behavior and mental processes",
+    semesters: [
+      {
+        semester: "Semester 1",
+        subjects: [
+          "Introduction to Psychology",
+          "Biological Psychology",
+          "Cognitive Psychology",
+          "Developmental Psychology",
+          "Research Methods in Psychology"
+        ],
+        price: "₹12,500"
+      },
+      {
+        semester: "Semester 2",
+        subjects: [
+          "Social Psychology",
+          "Abnormal Psychology",
+          "Personality Theories",
+          "Psychological Testing and Assessment",
+          "Statistics for Psychology"
+        ],
+        price: "₹12,500"
+      },
+      {
+        semester: "Semester 3",
+        subjects: [
+          "Clinical Psychology",
+          "Organizational Psychology",
+          "Counseling Psychology",
+          "Health Psychology",
+          "Positive Psychology"
+        ],
+        price: "₹12,500"
+      },
+      {
+        semester: "Semester 4",
+        subjects: [
+          "Neuropsychology",
+          "Forensic Psychology",
+          "Advanced Research Project",
+          "Psychotherapy Techniques",
+          "Ethics in Psychology"
+        ],
+        price: "₹12,500"
+      },
+      {
+       semester: "Project",
+        subjects: [
+          "Research Dissertation",
+          "Practical Training",
+          "Case Studies",
+          "Thesis Submission"
+        ],
+        price: "₹12,500"
+      }
+    ],
+    electives: [
+      {
+        title: "Clinical Psychology",
+        subjects: [
+          "Psychopathology",
+          "Therapeutic Interventions",
+          "Mental Health Assessment",
+          "Child Psychopathology",
+          "Community Mental Health"
+        ],
+        icon: "🧠"
+      },
+      {
+        title: "Organizational Psychology",
+        subjects: [
+          "Workplace Behavior",
+          "Leadership Psychology",
+          "Organizational Development",
+          "Talent Management",
+          "Workplace Stress Management"
+        ],
+        icon: "🏢"
+      },
+      {
+        title: "Educational Psychology",
+        subjects: [
+          "Learning Theories",
+          "Classroom Management",
+          "Special Education",
+          "Educational Assessment",
+          "Child Development"
+        ],
+        icon: "📚"
+      },
+      {
+        title: "Forensic Psychology",
+        subjects: [
+          "Criminal Behavior Analysis",
+          "Legal Psychology",
+          "Victimology",
+          "Psychological Profiling",
+          "Eyewitness Testimony"
+        ],
+        icon: "🕵️"
+      }
+    ]
+  },
+  MSC_COUNSELING: {
+    title: "Master of Science in Counseling Psychology",
+    description: "Specialized program focusing on counseling techniques, therapeutic interventions, and psychological assessment to help individuals cope with life challenges.",
+    semesterTitle: "Semester-wise Counseling Psychology Curriculum",
+    semesterDescription: "Comprehensive counseling program designed to develop therapeutic skills and psychological expertise",
+    semesters: [
+      {
+        semester: "Semester 1",
+        subjects: [
+          "Introduction to Counseling Psychology",
+          "Theories of Personality",
+          "Developmental Psychology",
+          "Basic Counseling Skills",
+          "Research Methods in Psychology"
+        ],
+        price: "₹12,500"
+      },
+      {
+        semester: "Semester 2",
+        subjects: [
+          "Psychopathology",
+          "Assessment in Counseling",
+          "Career Counseling",
+          "Marriage and Family Counseling",
+          "Ethics in Counseling"
+        ],
+        price: "₹12,500"
+      },
+      {
+        semester: "Semester 3",
+        subjects: [
+          "Advanced Counseling Techniques",
+          "Group Counseling",
+          "Crisis Intervention",
+          "Substance Abuse Counseling",
+          "Counseling Diverse Populations"
+        ],
+        price: "₹12,500"
+      },
+      {
+        semester: "Semester 4",
+        subjects: [
+          "Supervised Practicum",
+          "Counseling Research Project",
+          "Advanced Psychotherapy",
+          "Community Mental Health",
+          "Professional Development"
+        ],
+        price: "₹12,500"
+      },
+      {
+       semester: "Project",
+        subjects: [
+          "Clinical Internship",
+          "Case Study Portfolio",
+          "Thesis Submission",
+          "Professional Practice Evaluation"
+        ],
+        price: "₹12,500"
+      }
+    ],
+    electives: [
+      {
+        title: "Child and Adolescent Counseling",
+        subjects: [
+          "Child Development",
+          "Play Therapy",
+          "School Counseling",
+          "Adolescent Issues",
+          "Family Systems"
+        ],
+        icon: "🧒"
+      },
+      {
+        title: "Trauma Counseling",
+        subjects: [
+          "Trauma Theory",
+          "PTSD Interventions",
+          "Crisis Counseling",
+          "Grief Counseling",
+          "Resilience Building"
+        ],
+        icon: "🩹"
+      },
+      {
+        title: "Rehabilitation Counseling",
+        subjects: [
+          "Disability Studies",
+          "Vocational Rehabilitation",
+          "Chronic Illness Counseling",
+          "Cognitive Rehabilitation",
+          "Community Reintegration"
+        ],
+        icon: "♿"
+      },
+      {
+        title: "Positive Psychology Coaching",
+        subjects: [
+          "Strengths-Based Approaches",
+          "Wellbeing Interventions",
+          "Life Coaching Techniques",
+          "Mindfulness Practices",
+          "Goal Setting Strategies"
+        ],
+        icon: "🌟"
       }
     ]
   },

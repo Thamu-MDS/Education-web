@@ -1,3 +1,4 @@
+// ElectiveSection.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import ElectiveCard from './ElectiveCard';

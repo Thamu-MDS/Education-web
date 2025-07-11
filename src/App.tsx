@@ -15,6 +15,8 @@ import Pricedata from './Page/Pricedata';
 import Lang from './Page/Lang';
 import Skill from './Page/Skill';
 import Msc from './Page/Courses/Msc';
+import MScPsychology from './Page/Courses/MScPsychology';
+import MScCounselingPsychology from './Page/Courses/MScCounselingPsychology';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -29,6 +31,8 @@ function AnimatedRoutes() {
         <Route path="/msc" element={<Msc />} />
         <Route path="/msc-it" element={<MScITPage />} />
         <Route path="/msc-cyber" element={<MScCyberPage />} />
+        <Route path="/msc-phy" element={<MScPsychology/>} />
+        <Route path="/msc-cphy" element={<MScCounselingPsychology />} />
         <Route path="/bcom" element={<BComPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/skills" element={<Skill />} />
