@@ -8,16 +8,18 @@ import {
   Phone,
   Mail,
   MapPin,
+  ChevronDown,
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [showCourses, setShowCourses] = useState(false);
 
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Courses', href: '#courses' },
+    { name: 'Courses', href: '#' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -41,11 +43,11 @@ const Footer: React.FC = () => {
   ];
 
   const courseSubLinks = [
-    { name: 'MBA', href: '#mba' },
-    { name: 'MCA', href: '#mca' },
-    { name: 'MSc', href: '#msc' },
-    { name: 'BCA', href: '#bca' },
-    { name: 'BCom', href: '#bcom' },
+    { name: 'MBA', href: '/mba' },
+    { name: 'MCA', href: '/mca' },
+    { name: 'MSc', href: '/msc' },
+    { name: 'BCA', href: '/bca' },
+    { name: 'BCom', href: '/bcom' },
   ];
 
   const handleSubscribe = () => {
@@ -91,7 +93,7 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links with Dropdown */}
+          {/* Quick Links with Click Dropdown and Arrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,33 +102,50 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
-                <li key={index} className="relative group">
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-gold-500 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                  {link.name === 'Courses' && (
-                    <ul className="absolute left-0 top-full mt-2 w-40 bg-primary-900 border border-gray-700 rounded-md shadow-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition duration-300 ease-in-out z-10">
-                      {courseSubLinks.map((course, subIndex) => (
-                        <li key={subIndex}>
-                          <a
-                            href={course.href}
-                            className="block px-4 py-2 text-gray-300 hover:bg-primary-800 hover:text-gold-500 transition"
-                          >
-                            {course.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                <li key={index}>
+                  {link.name === 'Courses' ? (
+                    <>
+                      <button
+                        onClick={() => setShowCourses(prev => !prev)}
+                        className="flex items-center space-x-2 text-gray-300 hover:text-gold-500 transition-colors duration-200 focus:outline-none"
+                      >
+                        <span>Courses</span>
+                        <ChevronDown
+                          size={18}
+                          className={`transition-transform duration-300 ${showCourses ? 'rotate-180' : ''
+                            }`}
+                        />
+                      </button>
+
+                      {showCourses && (
+                        <ul className="mt-2 ml-4 space-y-1 bg-primary-900 border border-gray-700 rounded-md shadow-lg p-2 w-fit z-10">
+                          {courseSubLinks.map((course, subIndex) => (
+                            <li key={subIndex}>
+                              <a
+                                href={course.href}
+                                className="block px-2 py-1 text-gray-300 hover:bg-primary-800 hover:text-gold-500 transition"
+                              >
+                                {course.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-gold-500 transition-colors duration-200"
+                    >
+                      {link.name}
+                    </a>
                   )}
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Contact Info with Interactive Links */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +153,6 @@ const Footer: React.FC = () => {
           >
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-4 text-gray-300">
-              {/* Phone */}
               <motion.a
                 href="tel:+919876543210"
                 className="flex items-start space-x-3 hover:text-gold-500 transition"
@@ -144,7 +162,6 @@ const Footer: React.FC = () => {
                 <span>+91 9876543210</span>
               </motion.a>
 
-              {/* Email */}
               <motion.a
                 href="mailto:info@edudistance.com"
                 className="flex items-start space-x-3 hover:text-gold-500 transition"
@@ -154,7 +171,6 @@ const Footer: React.FC = () => {
                 <span>info@edudistance.com</span>
               </motion.a>
 
-              {/* Address with Google Maps Link */}
               <motion.a
                 href="https://www.google.com/maps/search/?api=1&query=123+Education+Street+Learning+City+LC+12345"
                 target="_blank"
