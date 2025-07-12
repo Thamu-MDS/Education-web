@@ -128,7 +128,7 @@ const Header: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {[{ name: 'Skills', path: '/skills' }, { name: 'Languages', path: '/languages' }, { name: 'Price', path: '/price' }, { name: 'Contact', path: '/contact' }].map(link => (
+            {[{ name: 'Skills', path: '/skills' }, { name: 'Languages', path: '/languages' }, { name: 'Price', path: '/price' }, { name: 'Contact Us', path: '/contact' }].map(link => (
               <button
                 key={link.path}
                 onClick={() => handleNavigate(link.path)}

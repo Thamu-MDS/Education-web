@@ -207,17 +207,17 @@ export const ProgramData: Record<string, Program> = {
         ],
         price: "₹12,500"
       },
-        {
+      {
         semester: "Semester 4",
         subjects: [
-           "Project & Viva-Voce "
+          "Project & Viva-Voce "
         ],
         price: "₹12,500"
       },
       {
-       semester: "Project",
+        semester: "Project",
         subjects: [
-           "Project & Viva-Voce "
+          "Project & Viva-Voce "
         ],
         price: "₹12,500"
       }
@@ -276,7 +276,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Comprehensive cybersecurity program to build expertise in digital security and threat management",
     semesters: [
       {
-        semester:  "Semester 1",
+        semester: "Semester 1",
         subjects: [
           "Introduction to Cyber Criminology  ",
           "Networking and Communication Protocols ",
@@ -287,7 +287,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 2",
+        semester: "Semester 2",
         subjects: [
           "Network Security and Cryptography ",
           "Basics of Cyber Forensics ",
@@ -298,7 +298,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 3",
+        semester: "Semester 3",
         subjects: [
           "Database Management Security ",
           "Advanced Cyber Forensics ",
@@ -309,24 +309,24 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 4",
-            subjects: [
-              "Application Security ",
-              "Governance, Risk  &Compliance ",
-              "Business Continuity & Disaster Recovery Management ",
-              "Security Testing ",
-              "Cyber Laws &  Intellectual Property Rights "
-            ],
-            price: "₹12,500"
+        semester: "Semester 4",
+        subjects: [
+          "Application Security ",
+          "Governance, Risk  &Compliance ",
+          "Business Continuity & Disaster Recovery Management ",
+          "Security Testing ",
+          "Cyber Laws &  Intellectual Property Rights "
+        ],
+        price: "₹12,500"
       },
       {
-       semester: "Project",
+        semester: "Project",
         subjects: [
-           "Application Security ",
-              "Governance, Risk  &Compliance ",
-              "Business Continuity & Disaster Recovery Management ",
-              "Security Testing ",
-              "Cyber Laws &  Intellectual Property Rights "
+          "Application Security ",
+          "Governance, Risk  &Compliance ",
+          "Business Continuity & Disaster Recovery Management ",
+          "Security Testing ",
+          "Cyber Laws &  Intellectual Property Rights "
         ],
         price: "₹12,500"
       }
@@ -412,23 +412,23 @@ export const ProgramData: Record<string, Program> = {
       },
       {
         semester: "Semester 4",
-            subjects: [
-              "Project Management in IT",
-              "IT Security and Audit",
-              "Emerging Technologies",
-              "DevOps and Automation",
-              "Research Methodology"
-            ],
-            price: "₹12,500"
+        subjects: [
+          "Project Management in IT",
+          "IT Security and Audit",
+          "Emerging Technologies",
+          "DevOps and Automation",
+          "Research Methodology"
+        ],
+        price: "₹12,500"
       },
       {
-       semester: "Project",
+        semester: "Project",
         subjects: [
-           "Project Management in IT",
-              "IT Security and Audit",
-              "Emerging Technologies",
-              "DevOps and Automation",
-              "Research Methodology"
+          "Project Management in IT",
+          "IT Security and Audit",
+          "Emerging Technologies",
+          "DevOps and Automation",
+          "Research Methodology"
         ],
         price: "₹12,500"
       }
@@ -478,54 +478,55 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: "Semester 1",
         subjects: [
-          "Introduction to Psychology",
-          "Biological Psychology",
-          "Cognitive Psychology",
-          "Developmental Psychology",
-          "Research Methods in Psychology"
+          "Advanced General Psychology- I ",
+          "Research Methodology-I ",
+          "Advanced Social Psychology ",
+          "Developmental Psychology ",
+          "Positive Psychology "
         ],
         price: "₹12,500"
       },
       {
         semester: "Semester 2",
         subjects: [
-          "Social Psychology",
-          "Abnormal Psychology",
-          "Personality Theories",
-          "Psychological Testing and Assessment",
-          "Statistics for Psychology"
+          "Advanced General Psychology- II",
+          "Research Methodology-II ",
+          "School Counselling ",
+          "Guidance & Counselling – I ",
+          "Counselling for children "
         ],
         price: "₹12,500"
       },
       {
         semester: "Semester 3",
         subjects: [
-          "Clinical Psychology",
-          "Organizational Psychology",
-          "Counseling Psychology",
-          "Health Psychology",
-          "Positive Psychology"
+          "Psychopathology –I ",
+          "Guidance & Counselling – II ",
+          "Organisational Behaviour ",
+          "Human Resource Management ",
+          "Personality"
         ],
         price: "₹12,500"
       },
       {
         semester: "Semester 4",
         subjects: [
-          "Neuropsychology",
-          "Forensic Psychology",
-          "Advanced Research Project",
-          "Psychotherapy Techniques",
-          "Ethics in Psychology"
+          "Consumer Behaviour, Marketing & Advertising  ",
+          "Psychopathology –II",
+          "Health Psychology ",
+          "Psychological Testing ",
+          "Counselling for Adolescence"
         ],
         price: "₹12,500"
       },
       {
-       semester: "Project",
+        semester: "Project",
         subjects: [
-          "Research Dissertation",
-          "Practical Training",
-          "Case Studies",
-          "Thesis Submission"
+          "Consumer Behaviour, Marketing & Advertising  ",
+          "Psychopathology –II",
+          "Health Psychology ",
+          "Psychological Testing ",
+          "Counselling for Adolescence"
         ],
         price: "₹12,500"
       }
@@ -586,54 +587,55 @@ export const ProgramData: Record<string, Program> = {
       {
         semester: "Semester 1",
         subjects: [
-          "Introduction to Counseling Psychology",
-          "Theories of Personality",
+          "Advanced General Psychology- I",
+          "Research Methodology- I",
+          "Theories of Counseling & Practice-I  ",
           "Developmental Psychology",
-          "Basic Counseling Skills",
-          "Research Methods in Psychology"
+          "Positive Psychology "
         ],
         price: "₹12,500"
       },
       {
         semester: "Semester 2",
         subjects: [
-          "Psychopathology",
-          "Assessment in Counseling",
-          "Career Counseling",
-          "Marriage and Family Counseling",
-          "Ethics in Counseling"
+          "Advanced General Psychology- II ",
+          "Research Methodology- II",
+          "Theories of Counseling & Practice -II ",
+          "Psychological Testing ",
+          "Counselling for children "
         ],
         price: "₹12,500"
       },
       {
         semester: "Semester 3",
         subjects: [
-          "Advanced Counseling Techniques",
-          "Group Counseling",
-          "Crisis Intervention",
-          "Substance Abuse Counseling",
-          "Counseling Diverse Populations"
+          "Psychopathology –I ",
+          "Counselling Special Population ",
+          "Family & Work Place Counselling",
+          "School Counselling  ",
+          "Personality"
         ],
         price: "₹12,500"
       },
       {
         semester: "Semester 4",
         subjects: [
-          "Supervised Practicum",
-          "Counseling Research Project",
-          "Advanced Psychotherapy",
-          "Community Mental Health",
-          "Professional Development"
+          "Psychopathology -II",
+          "Rehabilitation Counselling ",
+          "Contemporary Therapies ",
+          "Case study ",
+          "Crisis intervention and Trauma Counseling "
         ],
         price: "₹12,500"
       },
       {
-       semester: "Project",
+        semester: "Project",
         subjects: [
-          "Clinical Internship",
-          "Case Study Portfolio",
-          "Thesis Submission",
-          "Professional Practice Evaluation"
+          "Psychopathology -II",
+          "Rehabilitation Counselling ",
+          "Contemporary Therapies ",
+          "Case study ",
+          "Crisis intervention and Trauma Counseling "
         ],
         price: "₹12,500"
       }
@@ -703,7 +705,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 2",
+        semester: "Semester 2",
         subjects: [
           "Tamil or other language",
           "English ",
@@ -714,7 +716,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 3",
+        semester: "Semester 3",
         subjects: [
           "Programming in C++ and Data Structures ",
           "Microprocessors and its Applications",
@@ -725,7 +727,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 4",
+        semester: "Semester 4",
         subjects: [
           "Programming in Java",
           "Operating System",
@@ -736,7 +738,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 5",
+        semester: "Semester 5",
         subjects: [
           "Database Management System   ",
           "Software Engineering",
@@ -748,7 +750,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 6",
+        semester: "Semester 6",
         subjects: [],
         price: "",
         hasChoice: true,
@@ -783,7 +785,7 @@ export const ProgramData: Record<string, Program> = {
     semesterDescription: "Complete commerce education building expertise in business, finance, and accounting",
     semesters: [
       {
-        semester:  "Semester 1",
+        semester: "Semester 1",
         subjects: [
           "Tamil or other language ",
           "English",
@@ -794,7 +796,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 2",
+        semester: "Semester 2",
         subjects: [
           "Tamil or other language",
           "English ",
@@ -805,7 +807,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 3",
+        semester: "Semester 3",
         subjects: [
           "Corporate Accounting -I ",
           "Business Laws ",
@@ -816,7 +818,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 4",
+        semester: "Semester 4",
         subjects: [
           "Corporate Accounting – II",
           "Company Law ",
@@ -827,7 +829,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 5",
+        semester: "Semester 5",
         subjects: [
           "Cost Accounting  ",
           "Practical Auditing",
@@ -838,7 +840,7 @@ export const ProgramData: Record<string, Program> = {
         price: "₹12,500"
       },
       {
-        semester:  "Semester 6",
+        semester: "Semester 6",
         subjects: [],
         price: "",
         hasChoice: true,

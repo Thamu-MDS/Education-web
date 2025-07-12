@@ -61,41 +61,41 @@ const MScCounselingPsychology = () => {
     {
       semester: "Semester 1",
       courses: [
-        "Introduction to Counseling Psychology",
-        "Theories of Personality",
+        "Advanced General Psychology- I",
+        "Research Methodology- I",
+        "Theories of Counseling & Practice-I  ",
         "Developmental Psychology",
-        "Basic Counseling Skills",
-        "Research Methods in Psychology"
+        "Positive Psychology "
       ]
     },
     {
       semester: "Semester 2",
       courses: [
-        "Psychopathology",
-        "Cognitive Behavioral Therapy",
-        "Group Counseling Techniques",
-        "Psychological Assessment",
-        "Practical - Counseling Skills"
+        "Advanced General Psychology- II ",
+        "Research Methodology- II",
+        "Theories of Counseling & Practice -II ",
+        "Psychological Testing ",
+        "Counselling for children "
       ]
     },
     {
       semester: "Semester 3",
       courses: [
-        "Marriage and Family Counseling",
-        "Career Counseling",
-        "Crisis Intervention",
-        "Substance Abuse Counseling",
-        "Practical - Advanced Counseling"
+        "Psychopathology –I ",
+        "Counselling Special Population ",
+        "Family & Work Place Counselling",
+        "School Counselling  ",
+        "Personality"
       ]
     },
     {
       semester: "Semester 4",
       courses: [
-        "Community Mental Health",
-        "Positive Psychology Interventions",
-        "Supervised Practicum",
-        "Dissertation",
-        "Professional Ethics in Counseling"
+        "Psychopathology -II",
+        "Rehabilitation Counselling ",
+        "Contemporary Therapies ",
+        "Case study ",
+        "Crisis intervention and Trauma Counseling "
       ]
     }
   ];

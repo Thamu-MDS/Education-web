@@ -304,7 +304,7 @@ function Msc() {
                             </p>
 
                             <div className="space-y-3">
-                               <Link to="" onClick={handleNavigate}>
+                               <Link to="/msc-phy" onClick={handleNavigate}>
                                     <motion.button
                                         {...scaleOnHover}
                                         className="w-full px-6 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#0a1f44] font-bold rounded-xl hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 text-lg"

@@ -61,41 +61,41 @@ const MScPsychology = () => {
     {
       semester: "Semester 1",
       courses: [
-        "Introduction to Advanced Psychology",
-        "Biological Bases of Behavior",
-        "Cognitive Processes",
-        "Research Methods in Psychology",
-        "Statistics for Psychological Research"
+        "Advanced General Psychology- I ",
+        "Research Methodology-I ",
+        "Advanced Social Psychology ",
+        "Developmental Psychology ",
+        "Positive Psychology "
       ]
     },
     {
       semester: "Semester 2",
       courses: [
-        "Developmental Psychology",
-        "Social Psychology",
-        "Psychological Testing and Assessment",
-        "Experimental Psychology",
-        "Positive Psychology"
+        "Advanced General Psychology- II",
+        "Research Methodology-II ",
+        "School Counselling ",
+        "Guidance & Counselling – I ",
+        "Counselling for children "
       ]
     },
     {
       semester: "Semester 3",
       courses: [
-        "Abnormal Psychology",
-        "Theories of Personality",
-        "Organizational Behavior",
-        "Clinical Psychology",
-        "Practical - Psychological Testing"
+        "Psychopathology –I ",
+        "Guidance & Counselling – II ",
+        "Organisational Behaviour ",
+        "Human Resource Management ",
+        "Personality"
       ]
     },
     {
       semester: "Semester 4",
       courses: [
-        "Health Psychology",
-        "Neuropsychology",
-        "Counseling Psychology",
-        "Dissertation",
-        "Internship/Practicum"
+        "Consumer Behaviour, Marketing & Advertising  ",
+        "Psychopathology –II",
+        "Health Psychology ",
+        "Psychological Testing ",
+        "Counselling for Adolescence"
       ]
     }
   ];
