@@ -43,7 +43,7 @@ const BComPage = () => {
 
   const curriculum = [
     {
-      year: "SEMESTER 1",
+      year: "Semester 1",
       courses: [
         "Tamil or other language ",
         "English",
@@ -53,7 +53,7 @@ const BComPage = () => {
       ]
     },
     {
-      year: "SEMESTER 2",
+      year: "Semester 2",
       courses: [
         "Tamil or other language",
         "English ",
@@ -63,7 +63,7 @@ const BComPage = () => {
       ]
     },
     {
-      year: "SEMESTER 3",
+      year: "Semester 3",
       courses: [
         "Corporate Accounting -I ",
         "Business Laws ",
@@ -73,7 +73,7 @@ const BComPage = () => {
       ]
     },
      {
-      year: "SEMESTER 4",
+      year: "Semester 4",
       courses: [
         "Corporate Accounting – II",
         "Company Law ",
@@ -83,7 +83,7 @@ const BComPage = () => {
       ]
     },
     {
-      year: "SEMESTER 5",
+      year: "Semester 5",
       courses: [
         "Cost Accounting  ",
         "Practical Auditing",
@@ -93,7 +93,7 @@ const BComPage = () => {
       ]
     },
     {
-      year: "SEMESTER 6",
+      year: "Semester6",
       courses: [
         "Management Accounting ",
         "Business Taxation",

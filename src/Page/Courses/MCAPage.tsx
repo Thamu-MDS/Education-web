@@ -190,7 +190,7 @@ const MCAPage = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="absolute -bottom-4 -left-4 bg-slate-800 text-white px-4 py-2 rounded-full font-semibold text-sm border border-slate-700 shadow-lg"
               >
-                100% Online
+               Career Steady
               </motion.div>
             </motion.div>
           </div>

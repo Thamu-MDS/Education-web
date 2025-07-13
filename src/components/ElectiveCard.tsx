@@ -27,10 +27,7 @@ const ElectiveCard: React.FC<ElectiveCardProps> = ({ title, subjects, icon }) =>
           <div className="bg-gradient-to-br from-[#1a2952] to-[#0B1C39] rounded-2xl p-6 border-2 border-[#FFD700]/20 shadow-lg h-full flex flex-col items-center justify-center text-center">
             <div className="text-6xl mb-4">{icon}</div>
             <h3 className="text-xl font-bold text-[#FFD700] mb-4">{title}</h3>
-            <div className="flex items-center text-gray-300">
-              <span className="text-sm mr-2">View Subjects</span>
-              <ChevronRight size={16} />
-            </div>
+            
           </div>
         </div>
 

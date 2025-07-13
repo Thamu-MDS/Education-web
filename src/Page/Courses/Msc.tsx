@@ -9,9 +9,9 @@ import {
     ArrowRight,
     TrendingUp,
     Brain,
-    Heart,
+   MessageSquare,
     Shield,
-    Lock
+    Laptop
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -68,7 +68,7 @@ function Msc() {
     ];
 
     return (
-        <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
+        <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden mt-20">
             {/* Hero Section */}
             <section className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -194,7 +194,7 @@ function Msc() {
                         </p>
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-2 gap-10">
+                    <div className="grid lg:grid-cols-4 gap-10">
                         {/* Cyber Forensics Program */}
                         <motion.div
                             variants={fadeInUp}
@@ -252,7 +252,7 @@ function Msc() {
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <Lock className="w-16 h-16" />
+                                < Laptop className="w-16 h-16" />
                             </motion.div>
 
                             <h3 className="text-3xl font-bold mb-6 text-white group-hover:text-yellow-500 transition-colors duration-300">
@@ -332,7 +332,7 @@ function Msc() {
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <Heart className="w-16 h-16" />
+                                <MessageSquare className="w-16 h-16" />
                             </motion.div>
 
                             <h3 className="text-3xl font-bold mb-6 text-white group-hover:text-yellow-500 transition-colors duration-300">
@@ -405,7 +405,7 @@ function Msc() {
 
             {/* Why Choose This Program */}
             <motion.section
-                className="py-20 px-4 bg-gradient-to-b from-[#0a1f44] to-[#1a365d]"
+                className="py-20 px-4 bg-gradient-to-b from-yellow-400 to-yellow-500"
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
@@ -413,10 +413,10 @@ function Msc() {
             >
                 <div className="max-w-6xl mx-auto">
                     <motion.div variants={fadeInUp} className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-yellow-400">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
                             Why Choose Our Program?
                         </h2>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                        <p className="text-xl text-slate-900 max-w-3xl mx-auto">
                             Join thousands of successful graduates who have transformed their careers with our comprehensive MSc programs.
                         </p>
                     </motion.div>
@@ -427,7 +427,7 @@ function Msc() {
                                 key={index}
                                 variants={fadeInUp}
                                 whileHover={{ y: -10, scale: 1.02 }}
-                                className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-yellow-400/50 transition-all duration-300"
+                                className="bg-slate-900 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-slate-900/50 transition-all duration-300"
                             >
                                 <div className="text-yellow-400 mb-4">
                                     {feature.icon}

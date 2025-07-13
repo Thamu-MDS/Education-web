@@ -14,15 +14,16 @@ import {
 // Introduction Component
 const Introduction = () => {
   return (
-    <section className="py-20 bg-slate-900">
+    <section className="py-20 bg-slate-900 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             What is Six Sigma?
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Six Sigma is a data-driven methodology for improving process quality and eliminating defects. 
-            It uses statistical analysis to identify and remove causes of errors in business processes.
+           Six Sigma is a data-driven approach to improve process quality and reduce defects. 
+           It uses statistical tools to identify and eliminate the root causes of errors.
+
           </p>
         </div>
         
@@ -72,9 +73,6 @@ const Introduction = () => {
           <div className="bg-slate-800 border-2 border-yellow-500 rounded-2xl p-8 text-center">
             <div className="text-6xl font-bold text-yellow-500 mb-2">99%</div>
             <div className="text-white text-lg mb-4">Accuracy Rate</div>
-            <div className="text-slate-300">
-              Six Sigma aims for near-perfect quality with only 3.4 defects per million opportunities
-            </div>
           </div>
         </div>
       </div>

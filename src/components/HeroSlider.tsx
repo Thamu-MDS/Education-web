@@ -47,7 +47,7 @@ const slides: Slide[] = [
     stats: [
       { value: "2000+", label: "Students Enrolled" },
       { value: "95%", label: "Placement Rate" },
-      { value: "3 Years", label: "Duration" }
+      { value: "2 Years", label: "Duration" }
     ],
     badge: "Most Popular"
   },

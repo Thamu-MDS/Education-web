@@ -454,7 +454,7 @@ const CTA = () => {
 
 const Home = () => {
   return (
-    <div className="overflow-hidden mt-10">
+    <div className="overflow-hidden mt-20">
       <HeroSlider />
       <Features />
       <CTA />

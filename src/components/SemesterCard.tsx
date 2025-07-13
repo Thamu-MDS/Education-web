@@ -174,7 +174,7 @@ const SemesterCard: React.FC<SemesterCardProps> = ({ semester, subjects, price, 
           rotateY: 2,
           boxShadow: "0 25px 50px rgba(255, 215, 0, 0.4)"
         }}
-        className="bg-gradient-to-br from-[#1a2952] to-[#0B1C39] rounded-2xl p-6 border-t-4 border-[#FFD700] shadow-lg hover:shadow-[#FFD700]/20 transition-all duration-500 h-full relative overflow-hidden"
+        className="bg-gradient-to-br from-slate-900 to-slate-900 rounded-2xl p-6 border-t-4 border-[#FFD700] shadow-lg hover:shadow-[#FFD700]/20 transition-all duration-500 h-full relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-5">
           <motion.div

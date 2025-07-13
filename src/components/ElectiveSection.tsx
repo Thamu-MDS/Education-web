@@ -13,7 +13,7 @@ interface ElectiveSectionProps {
 
 const ElectiveSection: React.FC<ElectiveSectionProps> = ({ electives }) => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-[#0B1C39] to-[#1a2952]">
+    <section className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-900">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

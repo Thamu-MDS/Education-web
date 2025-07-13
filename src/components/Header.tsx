@@ -31,7 +31,7 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <motion.header 
+    <motion.header
       className="fixed top-0 w-full z-50 bg-slate-900 backdrop-blur-md shadow-md transition-all duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -48,6 +48,12 @@ const Header: React.FC = () => {
                 className="h-12 w-auto object-contain rounded-full"
               />
             </motion.div>
+
+            {/* 👉 Add Text Here */}
+            <div className="text-white group-hover:text-yellow-400 transition-colors">
+              <h1 className="text-sm font-semibold leading-tight">Madras Distance</h1>
+              <p className="text-sm text-slate-400">Education</p>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -56,9 +62,8 @@ const Header: React.FC = () => {
               <button
                 key={link.path}
                 onClick={() => handleNavigate(link.path)}
-                className={`relative px-4 py-2 font-medium transition-all duration-300 ${
-                  isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
-                }`}
+                className={`relative px-4 py-2 font-medium transition-all duration-300 ${isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
+                  }`}
               >
                 {link.name}
                 {isActive(link.path) && (
@@ -71,13 +76,13 @@ const Header: React.FC = () => {
             ))}
 
             {/* Courses Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setIsCoursesOpen(true)}
               onMouseLeave={() => setIsCoursesOpen(false)}
             >
               <button className="flex items-center px-4 py-2 font-medium text-white hover:text-yellow-400 transition-all duration-300">
-                Courses 
+                Courses
                 <motion.div animate={{ rotate: isCoursesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </motion.div>
@@ -132,9 +137,8 @@ const Header: React.FC = () => {
               <button
                 key={link.path}
                 onClick={() => handleNavigate(link.path)}
-                className={`relative px-4 py-2 font-medium transition-all duration-300 ${
-                  isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
-                }`}
+                className={`relative px-4 py-2 font-medium transition-all duration-300 ${isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
+                  }`}
               >
                 {link.name}
                 {isActive(link.path) && (

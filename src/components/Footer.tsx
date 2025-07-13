@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -16,6 +16,7 @@ const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [showCourses, setShowCourses] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const quickLinks = [
     { name: 'Home', href: '/' },
@@ -50,6 +51,19 @@ const Footer: React.FC = () => {
       icon: <Instagram size={20} />,
     },
   ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowCourses(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleSubscribe = () => {
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
@@ -100,6 +114,7 @@ const Footer: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative"
+            ref={dropdownRef}
           >
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -118,13 +133,13 @@ const Footer: React.FC = () => {
                         />
                       </button>
                       {showCourses && (
-                        <ul className="absolute left-0 top-full mt-2 w-40 bg-primary-900 border border-gray-700 rounded-md shadow-lg z-10">
+                        <ul className="absolute left-0 top-full mt-2 w-40 bg-slate-900 border border-gray-700 rounded-md shadow-lg z-10">
                           {courseSubLinks.map((course, subIndex) => (
                             <li key={subIndex}>
                               <Link
                                 to={course.href}
-                                onClick={() => setShowCourses(false)} // close menu on click
-                                className="block px-4 py-2 text-gray-300 hover:bg-primary-800 hover:text-gold-500 transition"
+                                onClick={() => setShowCourses(false)}
+                                className="block px-4 py-2 text-gray-300 hover:bg-slate-800 hover:text-yellow-500 transition"
                               >
                                 {course.name}
                               </Link>

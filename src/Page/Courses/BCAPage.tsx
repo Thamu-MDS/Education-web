@@ -42,7 +42,7 @@ const BCAPage = () => {
 
   const curriculum = [
     {
-      year: "SEMESTER 1",
+      year: "Semester 1",
       courses: [
         "Tamil or other language ",
         "English",
@@ -52,7 +52,7 @@ const BCAPage = () => {
       ]
     },
     {
-      year: "SEMESTER 2",
+      year: "Semester 2",
       courses: [
         "Tamil or other language",
         "English ",
@@ -62,7 +62,7 @@ const BCAPage = () => {
       ]
     },
     {
-      year: "SEMESTER 3",
+      year: "Semester 3",
       courses: [
         "Programming in C++ and Data Structures ",
         "Microprocessors and its Applications",
@@ -72,7 +72,7 @@ const BCAPage = () => {
       ]
     },
      {
-      year: "SEMESTER 4",
+      year: "Semester 4",
       courses: [
         "Programming in Java",
         "Operating System",
@@ -82,7 +82,7 @@ const BCAPage = () => {
       ]
     },
     {
-      year: "SEMESTER 5",
+      year: "Semester 5",
       courses: [
         "Database Management System   ",
         "Software Engineering",
@@ -93,7 +93,7 @@ const BCAPage = () => {
       ]
     },
     {
-      year: "SEMESTER 6",
+      year: "Semester 6",
       courses: [
         "Web Technology",
         "Data Communication and Net Working",

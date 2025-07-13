@@ -113,7 +113,7 @@ const MScCyberPage = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-block bg-amber-500 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold"
+                  className="inline-block bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold"
                 >
                   High Demand Field
                 </motion.span>
@@ -178,7 +178,7 @@ const MScCyberPage = () => {
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -top-4 -right-4 bg-amber-500 text-slate-900 px-4 py-2 rounded-full font-semibold text-sm shadow-lg"
+                className="absolute -top-4 -right-4 bg-yellow-400 text-slate-900 px-4 py-2 rounded-full font-semibold text-sm shadow-lg"
               >
                 Critical Skills
               </motion.div>
@@ -227,8 +227,8 @@ const MScCyberPage = () => {
                 className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-amber-500 transition-all duration-300 group"
               >
                 <div className="mb-6">
-                  <div className="bg-amber-500 p-3 rounded-lg w-fit group-hover:bg-amber-500 transition-colors">
-                    <feature.icon className="h-6 w-6 text-white" />
+                  <div className="bg-yellow-400 p-3 rounded-lg w-fit group-hover:bg-yellow-400 transition-colors">
+                    <feature.icon className="h-6 w-6 text-slate-700" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">
@@ -270,9 +270,9 @@ const MScCyberPage = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-amber-500 transition-all duration-300"
+                className="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300"
               >
-                <h3 className="text-2xl font-semibold text-amber-500 mb-6">{sem.semester}</h3>
+                <h3 className="text-2xl font-semibold text-yellow-400 mb-6">{sem.semester}</h3>
                 <ul className="space-y-3">
                   {sem.courses.map((course, courseIndex) => (
                     <motion.li
