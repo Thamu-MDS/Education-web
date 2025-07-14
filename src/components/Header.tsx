@@ -20,6 +20,29 @@ const Header: React.FC = () => {
     navigate(path);
   };
 
+  const scrollToContact = () => {
+    setIsMenuOpen(false);
+    setIsCoursesOpen(false);
+    
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/contact');
+      // Wait for the navigation to complete before scrolling
+      setTimeout(() => {
+        const contactSection = document.getElementById('contactf');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Small delay to ensure page has loaded
+    } else {
+      // If we're already on home page, just scroll to contact
+      const contactSection = document.getElementById('contactf');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   const courses = [
     { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
     { name: 'Msc', path: '/msc', description: 'Master of Science' },
@@ -152,7 +175,7 @@ const Header: React.FC = () => {
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <button
-                onClick={() => handleNavigate('/contact')}
+                onClick={scrollToContact}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Apply Now
@@ -215,6 +238,13 @@ const Header: React.FC = () => {
                     {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
                   </button>
                 ))}
+
+                <button
+                  onClick={scrollToContact}
+                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-semibold px-4 py-3 rounded-lg hover:shadow-lg transition-all duration-300"
+                >
+                  Apply Now
+                </button>
               </div>
             </motion.div>
           )}
@@ -224,4 +254,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Header; 

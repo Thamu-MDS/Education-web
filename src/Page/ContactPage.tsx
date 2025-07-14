@@ -1,271 +1,395 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    course: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  // ✅ Scroll to top on route change (fixes mobile issue)
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
-  const handleNavigate = (path: string) => {
-    setIsMenuOpen(false);
-    setIsCoursesOpen(false);
-    navigate(path);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const scrollToContactSection = () => {
-    setIsMenuOpen(false);
-    setIsCoursesOpen(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
     
-    // Navigate to contact page first
-    navigate('/contact');
-    
-    // Wait for the navigation to complete before scrolling
-    setTimeout(() => {
-      const contactSection = document.getElementById('contactf');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
+    try {
+      const response = await fetch('https://education-web-re6d.onrender.com/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Network response was not ok');
       }
-    }, 100); // Small delay to ensure page has loaded
+
+      const result = await response.json();
+      console.log('Form submission successful:', result);
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000);
+      
+      // Clear form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        course: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setError(error instanceof Error ? error.message : 'Failed to submit form. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const courses = [
-    { name: 'MBA', path: '/mba', description: 'Master of Business Administration' },
-    { name: 'Msc', path: '/msc', description: 'Master of Science' },
-    { name: 'MCA', path: '/mca', description: 'Master of Computer Applications' },
-    { name: 'BCA', path: '/bca', description: 'Bachelor of Computer Applications' },
-    { name: 'B.Com', path: '/bcom', description: 'Bachelor of Commerce' }
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      details: ["5th floor Raheja towers, 177, Anna salai, Chennai, Tamilnadu - 600002"]
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: ["+91 9884886078", "+91 9884886078", "Mon-Sat: 9AM-6PM"]
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: ["info@hetacollege.com", "info@mde.edu", "info@hetacollege.com"]
+    },
+    {
+      icon: Clock,
+      title: "Office Hours",
+      details: ["Monday - Friday: 9AM - 6PM", "Saturday: 9AM - 4PM", "Sunday: Closed"]
+    }
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const courses = [
+    "MCA - Master of Computer Applications",
+    "MBA - Master of Business Administration",
+    "BCA - Bachelor of Computer Applications",
+    "MSc IT - Master of Science in Information Technology",
+    "MSc Cyber Forensics - Master of Science in Cyber Forensics",
+    "B.Com - Bachelor of Commerce"
+  ];
 
   return (
-    <motion.header
-      className="fixed top-0 w-full z-50 bg-slate-900 backdrop-blur-md shadow-md transition-all duration-300"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="pt-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" onClick={() => handleNavigate('/')} className="flex items-center space-x-3 rounded-full group">
-            <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="relative">
-              <img
-                src="/Images/logo.jpg"
-                alt="Madras Distance Education Logo"
-                className="h-12 w-auto object-contain rounded-full"
-              />
-            </motion.div>
-
-            {/* 👉 Add Text Here */}
-            <div className="text-white group-hover:text-yellow-400 transition-colors">
-              <h1 className="text-sm font-semibold leading-tight">Madras Distance</h1>
-              <p className="text-sm text-slate-400">Education</p>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {[{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }].map(link => (
-              <button
-                key={link.path}
-                onClick={() => handleNavigate(link.path)}
-                className={`relative px-4 py-2 font-medium transition-all duration-300 ${isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
-                  }`}
-              >
-                {link.name}
-                {isActive(link.path) && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
-                  />
-                )}
-              </button>
-            ))}
-
-            {/* Courses Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsCoursesOpen(true)}
-              onMouseLeave={() => setIsCoursesOpen(false)}
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <motion.span
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-block bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold mb-4"
             >
-              <button className="flex items-center px-4 py-2 font-medium text-white hover:text-yellow-400 transition-all duration-300">
-                Courses
-                <motion.div animate={{ rotate: isCoursesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </motion.div>
-              </button>
+              Get In Touch
+            </motion.span>
 
-              <AnimatePresence>
-                {isCoursesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-96 bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl border border-slate-700 overflow-hidden max-h-96 overflow-y-auto"
-                  >
-                    {courses.map((course, index) => (
-                      <motion.div
-                        key={course.path}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.05 }}
-                      >
-                        <button
-                          onClick={() => handleNavigate(course.path)}
-                          className="w-full text-left block px-6 py-4 hover:bg-slate-700/50 transition-all duration-300 group border-b border-slate-700/50 last:border-b-0"
-                        >
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <h3 className="font-semibold text-white group-hover:text-yellow-400 transition-colors text-lg">
-                                {course.name}
-                              </h3>
-                              <p className="text-sm text-slate-400 mt-1 group-hover:text-slate-300 transition-colors">
-                                {course.description}
-                              </p>
-                            </div>
-                            <motion.div
-                              initial={{ x: -10, opacity: 0 }}
-                              whileHover={{ x: 0, opacity: 1 }}
-                              className="text-yellow-400 text-xl"
-                            >
-                              →
-                            </motion.div>
-                          </div>
-                        </button>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {[{ name: 'Skills', path: '/skills' }, { name: 'Languages', path: '/languages' }, { name: 'Price', path: '/price' }].map(link => (
-              <button
-                key={link.path}
-                onClick={() => handleNavigate(link.path)}
-                className={`relative px-4 py-2 font-medium transition-all duration-300 ${isActive(link.path) ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
-                  }`}
-              >
-                {link.name}
-                {isActive(link.path) && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
-                  />
-                )}
-              </button>
-            ))}
-
-            <button
-              onClick={() => handleNavigate('/contact')}
-              className={`relative px-4 py-2 font-medium transition-all duration-300 ${isActive('/contact') ? 'text-yellow-400' : 'text-white hover:text-yellow-400'
-                }`}
-            >
+            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
               Contact Us
-              {isActive('/contact') && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
-                />
-              )}
-            </button>
-
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <button
-                onClick={scrollToContactSection}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300"
-              >
-                Apply Now
-              </button>
-            </motion.div>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-yellow-400 p-2"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </motion.button>
-          </div>
+            </h1>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Ready to start your educational journey? We're here to help you every step of the way.
+              Get in touch with our admissions team for personalized guidance.
+            </p>
+          </motion.div>
         </div>
+      </section>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden bg-slate-800/95 backdrop-blur-md border-t border-slate-700 rounded-b-xl overflow-hidden"
-            >
-              <div className="px-4 py-6 space-y-4 max-h-96 overflow-y-auto">
-                <button onClick={() => handleNavigate('/')} className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
-                  Home
-                </button>
-                <button onClick={() => handleNavigate('/about')} className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/about') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}>
-                  About
-                </button>
-
+      {/* Contact Info Cards */}
+      <section className="py-20 bg-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {contactInfo.map((info, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300 group text-center"
+              >
+                <div className="mb-6">
+                  <div className="bg-yellow-400 p-4 rounded-lg w-fit mx-auto group-hover:bg-yellow-500 transition-colors">
+                    <info.icon className="h-8 w-8 text-slate-900" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  {info.title}
+                </h3>
                 <div className="space-y-2">
-                  <div className="text-yellow-400 font-semibold px-4 py-2 text-sm uppercase tracking-wider">Courses</div>
-                  {courses.map(course => (
-                    <button
-                      key={course.path}
-                      onClick={() => handleNavigate(course.path)}
-                      className={`block w-full text-left px-6 py-3 rounded-lg font-medium transition-all duration-300 ${isActive(course.path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
-                    >
-                      <div>
-                        <div className="font-semibold">{course.name}</div>
-                        <div className="text-xs opacity-75 mt-1">{course.description}</div>
-                      </div>
-                    </button>
+                  {info.details.map((detail, detailIndex) => (
+                    <p key={detailIndex} className="text-slate-400">
+                      {detail}
+                    </p>
                   ))}
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                {['/skills', '/languages', '/price'].map(path => (
-                  <button
-                    key={path}
-                    onClick={() => handleNavigate(path)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive(path) ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
+      {/* Contact Form & Map */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                <h2 className="text-3xl font-bold text-white mb-6">Send us a Message</h2>
+                <p className="text-slate-300 mb-8">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+
+                {error && (
+                  <div className="mb-6 p-4 bg-red-900/50 border border-red-700 rounded-lg text-red-300">
+                    {error}
+                  </div>
+                )}
+
+                {isSubmitted && (
+                  <div className="mb-6 p-4 bg-green-900/50 border border-green-700 rounded-lg text-green-300">
+                    Thank you! Your message has been sent successfully.
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-yellow-400 transition-colors"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-yellow-400 transition-colors"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-slate-300 mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-yellow-400 transition-colors"
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="course" className="block text-sm font-medium text-slate-300 mb-2">
+                        Course of Interest
+                      </label>
+                      <select
+                        id="course"
+                        name="course"
+                        value={formData.course}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"
+                      >
+                        <option value="">Select a course</option>
+                        {courses.map((course, index) => (
+                          <option key={index} value={course}>
+                            {course}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={5}
+                      className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-yellow-400 transition-colors resize-none"
+                      placeholder="Tell us about your educational goals and any questions you have..."
+                    ></textarea>
+                  </div>
+
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    disabled={isLoading}
+                    className={`w-full ${isLoading ? 'bg-yellow-600' : 'bg-yellow-400 hover:bg-yellow-500'} text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center group`}
                   >
-                    {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
-                  </button>
-                ))}
-
-                <button
-                  onClick={() => handleNavigate('/contact')}
-                  className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${isActive('/contact') ? 'bg-yellow-400 text-slate-900' : 'text-white hover:bg-slate-700'}`}
-                >
-                  Contact Us
-                </button>
-
-                <button
-                  onClick={scrollToContactSection}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-semibold px-4 py-3 rounded-lg hover:shadow-lg transition-all duration-300"
-                >
-                  Apply Now
-                </button>
+                    {isLoading ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : isSubmitted ? (
+                      <>
+                        <CheckCircle className="mr-2 h-5 w-5" />
+                        Message Sent!
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </motion.button>
+                </form>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.header>
+
+            {/* Map & Additional Info */}
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              {/* Map Placeholder */}
+              <div className="bg-slate-800 rounded-xl border border-slate-700 p-4 h-64 w-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="bg-white rounded-lg shadow-md overflow-hidden h-full w-full"
+                >
+                  <iframe
+                    title="Location Map"
+                    className="w-full h-full"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5790731004304!2d80.262750874843!3d13.062443687261345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526504a0f3792f%3A0xfc7d8e8cad27aa54!2sHETA%20INSTITUTE%20OF%20TECHNOLOGY!5e0!3m2!1sen!2sin!4v1751520011502!5m2!1sen!"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    style={{ border: 0 }}
+                  />
+                </motion.div>
+              </div>
+
+              {/* Quick Contact */}
+              <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                <h3 className="text-2xl font-bold text-white mb-6">Quick Contact</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <Phone className="h-5 w-5 text-yellow-400 mr-3" />
+                    <span className="text-slate-300">+91 9884886078</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Mail className="h-5 w-5 text-yellow-400 mr-3" />
+                    <span className="text-slate-300">info@hetacollege.com</span>
+                  </div>
+                  <div className="flex items-start">
+                    <Clock className="h-5 w-5 text-yellow-400 mr-3 mt-0.5" />
+                    <div className="text-slate-300">
+                      <p>Monday - Friday: 9AM - 6PM</p>
+                      <p>Saturday: 9AM - 4PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* FAQ */}
+              <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                <h3 className="text-2xl font-bold text-white mb-6">Frequently Asked</h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-yellow-400 mb-2">How do I apply?</h4>
+                    <p className="text-slate-300 text-sm">
+                      You can apply online through our website or contact our admissions team for assistance.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-yellow-400 mb-2">What are the admission requirements?</h4>
+                    <p className="text-slate-300 text-sm">
+                      Requirements vary by program. Contact us for specific eligibility criteria.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-yellow-400 mb-2">Do you offer financial aid?</h4>
+                    <p className="text-slate-300 text-sm">
+                      Yes, we offer various scholarship and financial assistance programs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </motion.div>
   );
 };
 
-export default Header;
+export default ContactPage;

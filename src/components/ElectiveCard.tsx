@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, BookOpen } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 interface ElectiveCardProps {
   title: string;
