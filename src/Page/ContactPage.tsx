@@ -110,14 +110,6 @@ const ContactPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <motion.span
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-block bg-yellow-400 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold mb-4"
-            >
-              Get In Touch
-            </motion.span>
 
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
               Contact Us
