@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Facebook,
-  Twitter,
+  X,
   Linkedin,
   Instagram,
   Phone,
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
       href: 'https://www.facebook.com/share/16hXrA32wt/',
       icon: <Facebook size={20} />,
     },
-    { name: 'Twitter', href: '#', icon: <Twitter size={20} /> },
+    { name: 'X', href: 'https://x.com/Madras_Dist_Edu?t=jt6DcXGN156PC2D9ueHb2A&s=09', icon: <X size={20} /> },
     {
       name: 'LinkedIn',
       href: 'http://linkedin.com/in/madras-distance-education-85a769371',

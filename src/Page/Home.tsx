@@ -59,9 +59,9 @@ const slides: Slide[] = [
     subtitle: "Master of Science ",
     description: "M.Sc. is a postgraduate degree designed to provide in-depth knowledge in science and technical disciplines. It builds strong analytical, research, and problem-solving skills that prepare students for academic, research, and industry roles.",
     image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    primaryCTA: "Explore MSc IT",
+    primaryCTA: "Explore MSc",
     secondaryCTA: "Apply Now",
-    link: "/msc-it",
+    link: "/msc",
     stats: [
       { value: "800+", label: "IT Professionals" },
       { value: "96%", label: "Industry Placement" },
