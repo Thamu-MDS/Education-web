@@ -17,8 +17,8 @@ interface Slide {
 }
 
 const handleNavigate = () => {
-    window.scrollTo(0, 0);
-  }; 
+  window.scrollTo(0, 0);
+};
 
 const slides: Slide[] = [
   {
@@ -413,7 +413,7 @@ const CTA = () => {
             Ready to Transform Your Future?
           </h2>
           <p className="text-base md:text-xl text-slate-800 mb-6 md:mb-8 max-w-3xl mx-auto">
-            Join our next batch and take the first step towards a successful career. 
+            Join our next batch and take the first step towards a successful career.
             Limited seats available for the upcoming semester.
           </p>
 
@@ -435,17 +435,23 @@ const CTA = () => {
               whileHover={{ scale: 1.05 }}
               className="flex items-center justify-center"
             >
-              <Phone className="h-4 w-4 md:h-5 md:w-5 text-slate-900 mr-2" />
-              <span className="text-sm md:text-base text-slate-900 font-semibold">+91 9876543210</span>
+              <a href="tel:+919884880809" className="flex items-center text-slate-900 hover:underline">
+                <Phone className="h-4 w-4 md:h-5 md:w-5 text-slate-900 mr-2" />
+                <span className="text-sm md:text-base font-semibold">+91 9884880809</span>
+              </a>
             </motion.div>
+
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center justify-center"
             >
-              <Mail className="h-4 w-4 md:h-5 md:w-5 text-slate-900 mr-2" />
-              <span className="text-sm md:text-base text-slate-900 font-semibold">admissions@mde.edu</span>
+              <a href="mailto:hetaeduversity2025@gmail.com" className="flex items-center text-slate-900 hover:underline">
+                <Mail className="h-4 w-4 md:h-5 md:w-5 text-slate-900 mr-2" />
+                <span className="text-sm md:text-base font-semibold">hetaeduversity2025@gmail.com</span>
+              </a>
             </motion.div>
           </div>
+
         </motion.div>
       </div>
     </section>

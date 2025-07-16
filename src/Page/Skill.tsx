@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
-import { 
-  ChevronRight, 
-  TrendingUp, 
-  BarChart3, 
-  Target, 
-  Zap, 
+import { Link } from "react-router-dom";
+import {
+  ChevronRight,
+  TrendingUp,
+  BarChart3,
+  Target,
+  Zap,
   CheckCircle,
   DollarSign,
   Users,
@@ -21,12 +22,12 @@ const Introduction = () => {
             What is Six Sigma?
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-           Six Sigma is a data-driven approach to improve process quality and reduce defects. 
-           It uses statistical tools to identify and eliminate the root causes of errors.
+            Six Sigma is a data-driven approach to improve process quality and reduce defects.
+            It uses statistical tools to identify and eliminate the root causes of errors.
 
           </p>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
@@ -38,7 +39,7 @@ const Introduction = () => {
                 <p className="text-slate-300">Identify the problem, goals, and deliverables</p>
               </div>
             </div>
-            
+
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
                 <BarChart3 className="w-6 h-6 text-slate-900" />
@@ -48,7 +49,7 @@ const Introduction = () => {
                 <p className="text-slate-300">Collect data and establish baseline metrics</p>
               </div>
             </div>
-            
+
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
                 <Zap className="w-6 h-6 text-slate-900" />
@@ -58,7 +59,7 @@ const Introduction = () => {
                 <p className="text-slate-300">Identify root causes of problems and defects</p>
               </div>
             </div>
-            
+
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
                 <CheckCircle className="w-6 h-6 text-slate-900" />
@@ -69,7 +70,7 @@ const Introduction = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-slate-800 border-2 border-yellow-500 rounded-2xl p-8 text-center">
             <div className="text-6xl font-bold text-yellow-500 mb-2">99%</div>
             <div className="text-white text-lg mb-4">Accuracy Rate</div>
@@ -122,11 +123,11 @@ const Benefits = () => {
             Why Choose Six Sigma?
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Six Sigma certification opens doors to better career opportunities, higher salaries, 
+            Six Sigma certification opens doors to better career opportunities, higher salaries,
             and the ability to drive meaningful change in your organization.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
@@ -139,11 +140,11 @@ const Benefits = () => {
                 <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mb-6 group-hover:bg-yellow-600 transition-colors">
                   <Icon className="w-8 h-8 text-slate-900" />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-white mb-4">
                   {benefit.title}
                 </h3>
-                
+
                 <p className="text-slate-300">
                   {benefit.description}
                 </p>
@@ -166,21 +167,25 @@ const CallToAction = () => {
             Ready to Transform Your Career?
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-            Join over 10,000+ certified professionals worldwide who have advanced their careers 
+            Join over 10,000+ certified professionals worldwide who have advanced their careers
             through Six Sigma certification. Start your journey today.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group inline-flex items-center px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-              Start Learning Now
-              <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            
-            
+
+            <Link to="/contact">
+              <button className="group inline-flex items-center px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                Start Learning Now
+                <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+
+
+
           </div>
         </div>
-        
-       
+
+
       </div>
     </section>
   );

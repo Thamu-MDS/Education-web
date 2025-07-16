@@ -39,7 +39,11 @@ const Footer: React.FC = () => {
       href: 'https://www.facebook.com/share/16hXrA32wt/',
       icon: <Facebook size={20} />,
     },
-    { name: 'X', href: 'https://x.com/Madras_Dist_Edu?t=jt6DcXGN156PC2D9ueHb2A&s=09', icon: <X size={20} /> },
+    { 
+      name: 'X', 
+      href: 'https://x.com/Madras_Dist_Edu?t=jt6DcXGN156PC2D9ueHb2A&s=09', 
+      icon: <X size={20} /> 
+    },
     {
       name: 'LinkedIn',
       href: 'http://linkedin.com/in/madras-distance-education-85a769371',
@@ -128,7 +132,7 @@ const Footer: React.FC = () => {
                       >
                         <span>Courses</span>
                         <ChevronDown
-                          size={18}
+                          size={20}
                           className={`transition-transform duration-300 ${showCourses ? 'rotate-180' : ''}`}
                         />
                       </button>
@@ -170,34 +174,33 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-4 text-gray-300">
               <motion.a
-                href="tel:+919876543210"
-                className="flex items-start space-x-3 hover:text-gold-500 transition"
+                href="tel:+91 9884880809"
+                className="flex items-center space-x-3 hover:text-gold-500 transition"
                 whileHover={{ scale: 1.05 }}
               >
-                <Phone className="text-gold-500 mt-1" size={18} />
-                <span>+91 9876543210</span>
+                <Phone className="text-gold-500 flex-shrink-0" size={20} />
+                <span>+91 9884880809</span>
               </motion.a>
 
               <motion.a
-                href="mailto:info@edudistance.com"
-                className="flex items-start space-x-3 hover:text-gold-500 transition"
+                href="mailto:hetaeduversity2025@gmail.com"
+                className="flex items-center space-x-3 hover:text-gold-500 transition"
                 whileHover={{ scale: 1.05 }}
               >
-                <Mail className="text-gold-500 mt-1" size={18} />
-                <span>info@edudistance.com</span>
+                <Mail className="text-gold-500 flex-shrink-0" size={20} />
+                <span>hetaeduversity2025@gmail.com</span>
               </motion.a>
 
               <motion.a
-                href="https://www.google.com/maps/search/?api=1&query=123+Education+Street+Learning+City+LC+12345"
+                href="https://www.google.com/maps/place/HETA+INSTITUTE+OF+TECHNOLOGY/@13.0624437,80.2653258,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526504a0f3792f:0xfc7d8e8cad27aa54!8m2!3d13.0624437!4d80.2653258!16s%2Fg%2F11rsfsqw8w?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start space-x-3 hover:text-gold-500 transition"
                 whileHover={{ scale: 1.05 }}
               >
-                <MapPin className="text-gold-500 mt-1" size={18} />
-                <span>
-                  123 Education Street<br />
-                  Learning City, LC 12345
+                <MapPin className="text-gold-500 mt-0.5 flex-shrink-0" size={20} />
+                <span className="leading-snug">
+                  Unit No.509, Beta Wing, 5th Floor Raheja Towers.177, Anna Salai, Chennai, Tamil Nadu 600002
                 </span>
               </motion.a>
             </div>
@@ -241,7 +244,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
         >
-          <p>&copy; 2025 EduDistance. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2025 EduDistance. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

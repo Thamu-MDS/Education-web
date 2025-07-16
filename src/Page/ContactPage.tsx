@@ -65,17 +65,21 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["5th floor Raheja towers, 177, Anna salai, Chennai, Tamilnadu - 600002"]
+      details: ["Unit No.509, Beta Wing, 5th Floor Raheja Towers.177, Anna Salai, Chennai, Tamil Nadu 600002"],
+      link: "https://www.google.com/maps/place/HETA+INSTITUTE+OF+TECHNOLOGY/@13.0624437,80.2653258,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526504a0f3792f:0xfc7d8e8cad27aa54!8m2!3d13.0624437!4d80.2653258!16s%2Fg%2F11rsfsqw8w?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D",
+      action: () => window.open("https://www.google.com/maps/place/HETA+INSTITUTE+OF+TECHNOLOGY/@13.0624437,80.2653258,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526504a0f3792f:0xfc7d8e8cad27aa54!8m2!3d13.0624437!4d80.2653258!16s%2Fg%2F11rsfsqw8w?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D", "_blank")
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 9884886078", "+91 9884886078", "Mon-Sat: 9AM-6PM"]
+      details: ["+91 9884880809", "+91 9150249532", "Mon-Sat: 9AM-6PM"],
+      action: (phoneNumber: string) => window.open(`tel:${phoneNumber.replace(/\D/g, '')}`)
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@hetacollege.com", "info@mde.edu", "info@hetacollege.com"]
+      details: ["hetaeduversity2025@gmail.com"],
+      action: (email: string) => window.open(`mailto:${email}`)
     },
     {
       icon: Clock,
@@ -110,7 +114,6 @@ const ContactPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
               Contact Us
             </h1>
@@ -134,7 +137,16 @@ const ContactPage = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300 group text-center"
+                className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-yellow-400 transition-all duration-300 group text-center cursor-pointer"
+                onClick={() => {
+                  if (info.action) {
+                    if (info.title === "Call Us" || info.title === "Email Us") {
+                      info.action(info.details[0]);
+                    } else {
+                      info.action();
+                    }
+                  }
+                }}
               >
                 <div className="mb-6">
                   <div className="bg-yellow-400 p-4 rounded-lg w-fit mx-auto group-hover:bg-yellow-500 transition-colors">
@@ -146,7 +158,18 @@ const ContactPage = () => {
                 </h3>
                 <div className="space-y-2">
                   {info.details.map((detail, detailIndex) => (
-                    <p key={detailIndex} className="text-slate-400">
+                    <p 
+                      key={detailIndex} 
+                      className="text-slate-400 hover:text-yellow-400 transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (info.title === "Call Us" && info.action && detail.match(/\+?\d[\d -]{8,}\d/)) {
+                          info.action(detail);
+                        } else if (info.title === "Email Us" && info.action && detail.includes("@")) {
+                          info.action(detail);
+                        }
+                      }}
+                    >
                       {detail}
                     </p>
                   ))}
@@ -334,19 +357,27 @@ const ContactPage = () => {
               <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
                 <h3 className="text-2xl font-bold text-white mb-6">Quick Contact</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center">
+                  <div 
+                    className="flex items-center cursor-pointer hover:text-yellow-400 transition-colors"
+                    onClick={() => window.open('tel:+919884880809')}
+                  >
                     <Phone className="h-5 w-5 text-yellow-400 mr-3" />
-                    <span className="text-slate-300">+91 9884886078</span>
+                    <span className="text-slate-300">+91 9884880809</span>
                   </div>
-                  <div className="flex items-center">
+                  <div 
+                    className="flex items-center cursor-pointer hover:text-yellow-400 transition-colors"
+                    onClick={() => window.open('mailto:hetaeduversity2025@gmail.com')}
+                  >
                     <Mail className="h-5 w-5 text-yellow-400 mr-3" />
-                    <span className="text-slate-300">info@hetacollege.com</span>
+                    <span className="text-slate-300">hetaeduversity2025@gmail.com</span>
                   </div>
-                  <div className="flex items-start">
-                    <Clock className="h-5 w-5 text-yellow-400 mr-3 mt-0.5" />
+                  <div 
+                    className="flex items-start cursor-pointer hover:text-yellow-400 transition-colors"
+                    onClick={() => window.open('https://www.google.com/maps/place/HETA+INSTITUTE+OF+TECHNOLOGY/@13.0624437,80.2653258,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526504a0f3792f:0xfc7d8e8cad27aa54!8m2!3d13.0624437!4d80.2653258!16s%2Fg%2F11rsfsqw8w?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D', '_blank')}
+                  >
+                    <MapPin className="h-5 w-5 text-yellow-400 mr-3 mt-0.5" />
                     <div className="text-slate-300">
-                      <p>Monday - Friday: 9AM - 6PM</p>
-                      <p>Saturday: 9AM - 4PM</p>
+                      <p>View on Google Maps</p>
                     </div>
                   </div>
                 </div>
